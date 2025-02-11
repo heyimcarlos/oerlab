@@ -2,8 +2,8 @@
 
 import { CommandIcon, FileIcon } from 'lucide-react'
 import { Dialog, DialogContent, DialogHeader, DialogTrigger, DialogClose, DialogTitle } from '@/components/ui/dialog'
-import { useCallback, useEffect, useMemo, useState } from 'react'
-import Anchor from './anchor'
+import { useEffect, useMemo, useState } from 'react'
+import Anchor from '@/components/anchor'
 import { advanceSearch, cn } from '@/lib/utils'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { Button } from './ui/button'
