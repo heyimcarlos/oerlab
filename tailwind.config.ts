@@ -12,6 +12,16 @@ const config = {
   ],
   theme: {
     extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            pre: {
+              //  NOTE: Removes the default background color from code blocks
+              backgroundColor: null,
+            },
+          },
+        },
+      },
       fontFamily: {
         sans: ['var(--font-geist-sans)', ...fontFamily.sans],
         mono: ['var(--font-geist-mono)', ...fontFamily.mono],
