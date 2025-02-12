@@ -1,13 +1,13 @@
-import { ModeToggle } from '@/components/theme-toggle'
 import { CommandIcon } from 'lucide-react'
 import Link from 'next/link'
-import { buttonVariants } from './ui/button'
-import Search from './search'
-import Anchor from './anchor'
+import { ModeToggle } from '@/components/theme-toggle'
+import { buttonVariants } from '@/components/ui/button'
+import Search from '@/components/search'
+import Anchor from '@/components/anchor'
 import { SheetLeftbar } from './leftbar'
 import { page_routes } from '@/lib/routes-config'
 import { SheetClose } from '@/components/ui/sheet'
-import { Icons } from './icons'
+import { Icons } from '@/components/icons'
 
 export const NAVLINKS = [
   {
@@ -30,7 +30,7 @@ export function Navbar() {
             <div className="sm:flex hidden">
               <Logo />
             </div>
-            <div className="lg:flex hidden items-center gap-4 text-sm font-medium text-muted-foreground">
+            <div className="md:flex hidden items-center gap-4 text-sm font-medium text-muted-foreground">
               <NavMenu />
             </div>
           </div>
