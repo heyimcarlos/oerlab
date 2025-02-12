@@ -1,13 +1,13 @@
-import { ModeToggle } from '@/components/theme-toggle'
 import { CommandIcon } from 'lucide-react'
 import Link from 'next/link'
-import { buttonVariants } from './ui/button'
-import Search from './search'
-import Anchor from './anchor'
+import { ModeToggle } from '@/components/theme-toggle'
+import { buttonVariants } from '@/components/ui/button'
+import Search from '@/components/search'
+import Anchor from '@/components/anchor'
 import { SheetLeftbar } from './leftbar'
 import { page_routes } from '@/lib/routes-config'
 import { SheetClose } from '@/components/ui/sheet'
-import { Icons } from './icons'
+import { Icons } from '@/components/icons'
 
 export const NAVLINKS = [
   {
@@ -30,7 +30,7 @@ export function Navbar() {
             <div className="sm:flex hidden">
               <Logo />
             </div>
-            <div className="lg:flex hidden items-center gap-4 text-sm font-medium text-muted-foreground">
+            <div className="md:flex hidden items-center gap-4 text-sm font-medium text-muted-foreground">
               <NavMenu />
             </div>
           </div>
@@ -41,7 +41,7 @@ export function Navbar() {
             <Search />
             <div className="flex ml-2.5 sm:ml-0">
               <Link
-                href="https://github.com/nisabmohd/NexDocs"
+                href="https://github.com/CentennialOERLab/student-site"
                 className={buttonVariants({ variant: 'ghost', size: 'icon' })}
               >
                 <Icons.gitHub className="h-[1.1rem] w-[1.1rem]" />

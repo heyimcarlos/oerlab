@@ -6,7 +6,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'AriaDocs - Blog',
+  title: 'Centennial OER Lab - Blog',
 }
 
 export default async function BlogIndexPage() {
