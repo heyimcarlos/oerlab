@@ -29,6 +29,7 @@
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
+    --selection: 0 0% 86%;
   }
 
   .dark {
@@ -56,6 +57,7 @@
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
+    --selection: 216 74% 41%;
   }
 }
 
@@ -74,6 +76,14 @@
     @apply bg-background text-foreground overscroll-none;
     font-synthesis-weight: none;
     text-rendering: optimizeLegibility;
+  }
+
+  /* Selected text */
+  ::selection {
+    background-color: hsl(var(--selection));
+  }
+  ::moz-selection {
+    background-color: hsl(var(--selection));
   }
 
   /* Custom scrollbar styling */
@@ -189,4 +199,8 @@ pre > code {
 code[data-theme*=' '],
 code[data-theme*=' '] span {
   color: var(--shiki-light);
+}
+
+code[data-language='plaintext'] {
+  color: rgb(39 39 42 / var(--tw-text-opacity, 1)) /* #27272a */;
 }

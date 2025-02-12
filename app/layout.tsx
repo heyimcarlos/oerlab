@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     'The Centennial College OER Lab is a student-led initiative to promote the use of open educational resources (OER) at Centennial College.',
 }
 
+// rgb(25 85 179)
 export default function RootLayout({
   children,
 }: Readonly<{
