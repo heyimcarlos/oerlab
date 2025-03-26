@@ -1,0 +1,829 @@
+---
+title: Implementation
+description: This section provides an overview of pressbooks-tailwind.
+---
+
+> Customize the theme colors in your project to create a cohesive and visually appealing interface. Each theme comes with a unique color palette that's easy to adjust.
+
+## Customize
+
+You have the flexibility to change the theme of this documentation by modifying the Tailwind CSS variables in `@styles/globals.css` and adjusting the syntax highlighting colors in `@styles/syntax.css`. 
+
+If you’d like to use the predefined Nebula, Halloween, or Ocean themes, simply copy and paste the provided code into the respective files. Once added, you'll immediately see the visual changes reflected in your documentation, enhancing its overall look and feel.
+
+### Nebula Theme
+
+The Nebula theme provides a vibrant color palette, making your application visually appealing and engaging.
+The theme is inspired by the cosmos, featuring vibrant colors that enhance the reading experience.
+
+<Tabs defaultValue="global" className="pt-5 pb-1">
+  <TabsList>
+    <TabsTrigger value="global">globals.css</TabsTrigger>
+    <TabsTrigger value="syntax">syntax.css</TabsTrigger>
+  </TabsList>
+  <TabsContent value="global">
+    ```css
+    $breakpoints: (
+      'sm': 40rem,
+      'md': 48rem,
+      'lg': 64rem,
+      'xl': 80rem,
+      '2xl': 96rem,
+    );
+
+    $shadow-values: (
+      '2xs': 0 1px rgb(0, 0, 0, 0.05),
+      'xs': 0 1px 2px 0 rgb(0, 0, 0, 0.05),
+      'sm': (0 1px 3px 0 rgb(0, 0, 0, 0.1),
+        0 1px 2px -1px rgb(0, 0, 0, 0.1)),
+      'md': (0 4px 6px -1px rgb(0, 0, 0, 0.1),
+        0 2px 4px -2px rgb(0, 0, 0, 0.1)),
+      'lg': (0 10px 15px -3px rgb(0, 0, 0, 0.1),
+        0 4px 6px -4px rgb(0, 0, 0, 0.1)),
+      'xl': (0 20px 25px -5px rgb(0, 0, 0, 0.1),
+        0 8px 10px -6px rgb(0, 0, 0, 0.1)),
+      '2xl': 0 25px 50px -12px rgb(0, 0, 0, 0.25),
+      'inner': inset 0 2px 4px 0 rgb(0, 0, 0, 0.06),
+      'none': 0 0 #0000,
+    );
+
+    $shadow-inset-values: (
+      'xs': inset 0 1px 2px 0 rgb(0, 0, 0, 0.05),
+      'sm': inset 0 1px 3px 0 rgb(0, 0, 0, 0.1),
+      'none': inset 0 0 #0000,
+    );
+
+    $radius-values: (
+      'none': 0,
+      'xs': 0.125rem,
+      'sm': 0.25rem,
+      'md': 0.375rem,
+      'lg': 0.5rem,
+      'xl': 0.75rem,
+      '2xl': 1rem,
+      '3xl': 1.5rem,
+      'full': calc(infinity * 1px),
+    );
+
+    $display-values: (
+      'block': block,
+      'inline': inline,
+      'inline-block': inline-block,
+      'flex': flex,
+      'grid': grid,
+      'none': none,
+    );
+
+    $justify-content-values: (
+      'start': flex-start,
+      'end': flex-end,
+      'center': center,
+      'between': space-between,
+      'around': space-around,
+      'evenly': space-evenly,
+    );
+
+    $align-items-values: (
+      'start': flex-start,
+      'end': flex-end,
+      'center': center,
+      'stretch': stretch,
+      'baseline': baseline,
+    );
+
+    $text-align-values: (
+      'left': left,
+      'center': center,
+      'right': right,
+      'justify': justify,
+      'start': start,
+      'end': end,
+    );
+
+    $flex-direction-values: (
+      'row': row,
+      'row-reverse': row-reverse,
+      'col': column,
+      'col-reverse': column-reverse,
+    );
+
+    $unit-values: (
+      '0': 0,
+      '1': 0.25rem,
+      '2': 0.5rem,
+      '3': 0.75rem,
+      '4': 1rem,
+      '5': 1.25rem,
+      '6': 1.5rem,
+      '8': 2rem,
+      '10': 2.5rem,
+      '12': 3rem,
+    );
+
+    $pixel-values: (
+      '0': 0,
+      '1': 1px,
+      '2': 2px,
+      '4': 4px,
+      '5': 5px,
+      '6': 6px,
+      '7': 7px,
+      '8': 8px,
+      '9': 9px,
+      '10': 10px,
+    );
+
+    $overflow-values: (
+      'auto': auto,
+      'hidden': hidden,
+      'visible': visible,
+      'scroll': scroll,
+    );
+
+    $grid-cols-values: (
+      '1': repeat(1, minmax(0, 1fr)),
+      '2': repeat(2, minmax(0, 1fr)),
+      '3': repeat(3, minmax(0, 1fr)),
+      '4': repeat(4, minmax(0, 1fr)),
+    );
+
+    $pseudo-classes: (
+      'hover': ':hover',
+      'focus': ':focus',
+      'active': ':active',
+      'visited': ':visited',
+      'focus-within': ':focus-within',
+      'focus-visible': ':focus-visible',
+    );
+
+    $font-weight-values: (
+      'thin': 100,
+      'extralight': 200,
+      'light': 300,
+      'normal': 400,
+      'medium': 500,
+      'semibold': 600,
+      'bold': 700,
+      'extrabold': 800,
+      'black': 900,
+    );
+
+    $blur-values: (
+      'xs': blur(4px),
+      'sm': blur(8px),
+      'md': blur(16px),
+      'lg': blur(24px),
+      'xl': blur(40px),
+      '2xl': blur(64px),
+      '3xl': blur(96px),
+      'none': none,
+    );
+
+    $cursor-values: (
+      'auto': auto,
+      'default': default,
+      'pointer': pointer,
+      'wait': wait,
+      'text': text,
+      'move': move,
+      'not-allowed': not-allowed,
+      'grab': grab,
+      'grabbing': grabbing,
+    );
+
+    $transition-values: (
+      'all': all cubic-bezier(0.4, 0, 0.2, 1) 300ms,
+    );
+
+    $transition-timing-values: (
+      'linear': linear,
+      'in': cubic-bezier(0.4, 0, 1, 1),
+      'out': cubic-bezier(0, 0, 0.2, 1),
+      'in-out': cubic-bezier(0.4, 0, 0.2, 1),
+      'initial': initial,
+    );
+
+    $transition-unit-values: (
+      '150': 150ms,
+      '300': 300ms,
+      '500': 500ms,
+      '700': 700ms,
+      '1000': 1000ms,
+    );
+
+    $list-style-values: (
+      'none': none,
+      'disc': disc,
+      'circle': circle,
+      'square': square,
+      'decimal': decimal,
+      'decimal-leading-zero': decimal-leading-zero,
+      'lower-roman': lower-roman,
+      'upper-roman': upper-roman,
+      'lower-alpha': lower-alpha,
+      'upper-alpha': upper-alpha,
+    );
+
+    $text-transform-values: (
+      'uppercase': uppercase,
+      'lowercase': lowercase,
+      'capitalize': capitalize,
+      'normal-case': none,
+    );
+
+    $colors: (
+      'white': #fff,
+      'learning-obj': #c5bdaa,
+      'try-it': #3c2a21,
+      'example': #eae8d7,
+      'challenge-question': #eae8d7,
+      'accordion': #f0f0f0,
+      'transparent': transparent,
+    );
+
+    $width-values: (
+      "1-2": 50%,
+      "1-3": 33.3333%,
+      "2-3": 66.6667%,
+      "1-4": 25%,
+      "2-4": 50%,
+      "3-4": 75%,
+      "1-5": 20%,
+      "2-5": 40%,
+      "3-5": 60%,
+      "4-5": 80%,
+      "full": 100%,
+      "auto": auto,
+      "min": min-content,
+      "max": max-content,
+      "0": 0,
+      "px": 1px,
+      "0.5": 0.125rem,
+      "1": 0.25rem,
+      "2": 0.5rem,
+      "4": 1rem,
+      "8": 2rem,
+      "10": 2.5rem,
+      "16": 4rem,
+      "32": 8rem,
+      "96": 24rem
+    );
+    $height-values: (
+      'min': min-content,
+      'max': max-content,
+      'fit': fit-content,
+      '100': 100%,
+      '90': 90%,
+      '80': 80%,
+      '70': 70%,
+      '60': 60%,
+      '50': 50%
+    );
+    $font-size-values: (
+      'xs': 0.75rem,
+      'sm': 0.875rem,
+      'base': 1rem,
+      'lg': 1.125rem,
+      'xl': 1.25rem,
+      '2xl': 1.5rem,
+      '3xl': 1.875rem,
+      '4xl': 2.25rem,
+      '5xl': 3rem,
+      '6xl': 3.75rem,
+      '7xl': 4.5rem,
+      '8xl': 6rem,
+      '9xl': 8rem,
+    );
+
+    //  NOTE: the php-sass compiler automatically removes backslashes from its output,
+    // so we need to double-escape the double backslash
+    $important-suffix: "\\\\!";
+
+    @mixin generate-utilities($property-prefix, $property, $values) {
+      @each $name, $value in $values {
+        .#{$property-prefix}-#{$name} {
+          #{$property}: $value;
+        }
+
+        .#{$property-prefix}-#{$name}#{$important-suffix} {
+          #{$property}: $value !important;
+        }
+
+        @each $breakpoint-key, $breakpoint-value in $breakpoints {
+          .#{$breakpoint-key}\\:#{$property-prefix}-#{$name} {
+            @media (min-width: $breakpoint-value) {
+              #{$property}: $value;
+            }
+          }
+
+          .#{$breakpoint-key}\\:#{$property-prefix}-#{$name}#{$important-suffix} {
+            @media (min-width: $breakpoint-value) {
+              #{$property}: $value !important;
+            }
+          }
+        }
+
+        @each $pseudo-key, $pseudo-value in $pseudo-classes {
+          .#{$pseudo-key}\\:#{$property-prefix}-#{$name} {
+            &#{$pseudo-value} {
+              #{$property}: $value;
+            }
+          }
+
+          .#{$pseudo-key}\\:#{$property-prefix}-#{$name}#{$important-suffix} {
+            &#{$pseudo-value} {
+              #{$property}: $value !important;
+            }
+          }
+
+          @each $breakpoint-key, $breakpoint-value in $breakpoints {
+            .#{$breakpoint-key}\\:#{$pseudo-key}\\:#{$property-prefix}-#{$name}:#{$pseudo-key} {
+              @media (min-width: $breakpoint-value) {
+                #{$property}: $value;
+              }
+            }
+
+            .#{$breakpoint-key}\\:#{$pseudo-key}\\:#{$property-prefix}-#{$name}#{$important-suffix}:#{$pseudo-key} {
+              @media (min-width: $breakpoint-value) {
+                #{$property}: $value !important;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    @include generate-utilities('display', 'display', $display-values);
+    @include generate-utilities('justify', 'justify-content', $justify-content-values);
+    @include generate-utilities('grid-cols', 'grid-template-columns', $grid-cols-values);
+    @include generate-utilities('align', 'align-items', $align-items-values);
+    @include generate-utilities('flex', 'flex-direction', $flex-direction-values);
+    @include generate-utilities('m', 'margin', $unit-values);
+    @include generate-utilities('mx', 'margin-inline', $unit-values);
+    @include generate-utilities('my', 'margin-block', $unit-values);
+    @include generate-utilities('mb', 'margin-bottom', $unit-values);
+    @include generate-utilities('mt', 'margin-top', $unit-values);
+    @include generate-utilities('ml', 'margin-left', $unit-values);
+    @include generate-utilities('mr', 'margin-right', $unit-values);
+    @include generate-utilities('p', 'padding', $unit-values);
+    @include generate-utilities('pb', 'padding-bottom', $unit-values);
+    @include generate-utilities('pt', 'padding-top', $unit-values);
+    @include generate-utilities('pl', 'padding-left', $unit-values);
+    @include generate-utilities('pr', 'padding-right', $unit-values);
+    @include generate-utilities('px', 'padding-inline', $unit-values);
+    @include generate-utilities('py', 'padding-block', $unit-values);
+    @include generate-utilities('gap', 'gap', $unit-values);
+    @include generate-utilities('gap-x', 'column-gap', $unit-values);
+    @include generate-utilities('gap-y', 'row-gap', $unit-values);
+    @include generate-utilities('indent', 'text-indent', $unit-values);
+    @include generate-utilities('border', 'border-width', $pixel-values);
+    @include generate-utilities('border-r', 'border-right-width', $pixel-values);
+    @include generate-utilities('border-l', 'border-left-width', $pixel-values);
+    @include generate-utilities('border-b', 'border-bottom-width', $pixel-values);
+    @include generate-utilities('border-t', 'border-top-width', $pixel-values);
+    @include generate-utilities('border-color', 'border-color', $colors);
+    @include generate-utilities('rounded', 'border-radius', $radius-values);
+    @include generate-utilities('shadow', 'box-shadow', $shadow-values);
+    @include generate-utilities('inset-shadow', 'box-shadow', $shadow-inset-values);
+    @include generate-utilities('font', 'font-weight', $font-weight-values);
+    @include generate-utilities('text', 'text-align', $text-align-values);
+    @include generate-utilities('text', 'font-size', $font-size-values);
+    @include generate-utilities('text', 'text-transform', $text-transform-values);
+    @include generate-utilities('blur', 'filter', $blur-values);
+    @include generate-utilities('cursor', 'cursor', $cursor-values);
+    @include generate-utilities('transition', 'transition', $transition-values);
+    @include generate-utilities('duration', 'transition-duration', $transition-unit-values);
+    @include generate-utilities('delay', 'transition-delay', $transition-unit-values);
+    @include generate-utilities('ease', 'transition-timing-function', $transition-values);
+    @include generate-utilities('list', 'list-style-type', $list-style-values);
+    @include generate-utilities('overflow', 'overflow', $overflow-values);
+    @include generate-utilities('overflow-x', 'overflow-x', $overflow-values);
+    @include generate-utilities('overflow-y', 'overflow-y', $overflow-values);
+    @include generate-utilities('color', 'color', $colors);
+    @include generate-utilities('background', 'background-color', $colors);
+    @include generate-utilities('w', 'width', $width-values);
+    @include generate-utilities('h', 'height', $height-values);
+    @include generate-utilities('pos', 'position', ('static': static, 'relative': relative, 'absolute': absolute, 'fixed': fixed, 'sticky': sticky));
+    @include generate-utilities('top', 'top', $unit-values);
+    @include generate-utilities('right', 'right', $unit-values);
+    @include generate-utilities('bottom', 'bottom', $unit-values);
+    @include generate-utilities('left', 'left', $unit-values);
+    /* Global Styles */
+
+    *,
+    :after,
+    :before,
+    ::backdrop {
+      box-sizing: border-box;
+      border: 0 solid;
+      margin: 0;
+      padding: 0;
+    }
+
+    //  NOTE: Increase the `font-size` of mathjax fraction element
+    .mjx-mfrac {
+      font-size: 1.5rem;
+    }
+    ```
+  </TabsContent>
+  <TabsContent value="syntax">
+    ```css
+     /* nebula */
+    /* Light Mode */
+    .keyword {
+       color: #15803d;
+       /* Dark Green */
+    }
+
+    .function {
+        color: #0ea5e9;
+        /* Sky Blue */
+    }
+
+    .punctuation {
+        color: #64748b;
+        /* Slate Gray */
+    }
+
+    .comment {
+        color: #94a3b8;
+        /* Muted Slate Gray */
+    }
+
+    .string,
+    .constant,
+    .annotation,
+    .boolean,
+    .number {
+        color: #16a34a;
+        /* Medium Green */
+    }
+
+    .tag {
+        color: #15803d;
+        /* Dark Green */
+    }
+
+    .attr-name {
+        color: #0d9488;
+        /* Teal */
+    }
+
+    .attr-value {
+        color: #059669;
+        /* Emerald Green */
+    }
+
+    /* Dark Mode */
+    .dark .keyword {
+        color: #86efac;
+        /* Light Green */
+    }
+
+    .dark .function {
+        color: #38bdf8;
+        /* Sky Blue */
+    }
+
+    .dark .string,
+    .dark .constant,
+    .dark .annotation,
+    .dark .boolean,
+    .dark .number {
+        color: #4ade80;
+        /* Soft Lime Green */
+    }
+
+    .dark .tag {
+        color: #86efac;
+        /* Light Green */
+    }
+
+    .dark .attr-name {
+        color: #34d399;
+        /* Teal */
+    }
+
+    .dark .attr-value {
+        color: #6ee7b7;
+        /* Light Emerald */
+    }
+    ```
+  </TabsContent>
+</Tabs>
+
+### Halloween Theme
+
+The Halloween theme infuses your documentation with a spooky, festive atmosphere, ideal for seasonal content. Its design is inspired by Halloween motifs, featuring eerie colors and playful elements that enhance the overall reading experience.
+
+<Tabs defaultValue="global" className="pt-5 pb-1">
+  <TabsList>
+    <TabsTrigger value="global">globals.css</TabsTrigger>
+    <TabsTrigger value="syntax">syntax.css</TabsTrigger>
+  </TabsList>
+  <TabsContent value="global">
+    ```css
+    /* halloween */
+    @layer base {
+      :root {
+        --background: 30 15% 10%; /* Darker pumpkin shade */
+        --foreground: 50 40% 95%; /* Ghostly white */
+        --card: 30 15% 12%; /* Slightly darker pumpkin */
+        --card-foreground: 50 40% 95%;
+        --popover: 30 15% 12%;
+        --popover-foreground: 50 40% 95%;
+        --primary: 35 78% 50%; /* Pumpkin orange */
+        --primary-foreground: 60 9.1% 97.8%; /* Soft ghostly white */
+        --secondary: 290 12% 16%; /* Witchy purple */
+        --secondary-foreground: 35 78% 50%;
+        --muted: 290 12% 16%;
+        --muted-foreground: 50 20% 85%; /* Pale grey */
+        --accent: 43 100% 50%; /* Bright pumpkin */
+        --accent-foreground: 0 0% 100%;  /* Pure white */
+        --destructive: 0 84.2% 45%;  /* Blood red */
+        --destructive-foreground: 60 9.1% 97.8%;
+        --border: 290 20% 10%;  /* Dark witchy purple */
+        --input: 290 20% 10%;
+        --ring: 35 78% 50%; /* Glowing pumpkin ring */
+        --radius: 0.5rem;
+        --chart-1: 35 78% 50%; /* Pumpkin orange */
+        --chart-2: 50 40% 95%; /* Ghostly white */
+        --chart-3: 0 84.2% 45%; /* Blood red */
+        --chart-4: 43 100% 50%; /* Bright pumpkin */
+        --chart-5: 210 70% 30%; /* Shadowy blue */
+    }
+
+    .dark {
+        --background: 240 3% 7%; /* Deep shadowy black */
+        --foreground: 43 100% 90%; /* Ghostly white */
+        --card: 240 3% 9%; /* Dark shadow */
+        --card-foreground: 43 100% 90%;
+        --popover: 240 3% 9%;
+        --popover-foreground: 43 100% 90%;
+        --primary: 35 78% 50%; /* Pumpkin orange */
+        --primary-foreground: 240 3% 7%; /* Shadowy black */
+        --secondary: 260 25% 15%; /* Dark witchy purple */
+        --secondary-foreground: 35 78% 50%;
+        --muted: 260 25% 15%;
+        --muted-foreground: 60 5% 65%; /* Pale grey */
+        --accent: 43 100% 50%; /* Bright pumpkin */
+        --accent-foreground: 0 0% 100%; /* Pure white */
+        --destructive: 0 84.2% 45%; /* Blood red */
+        --destructive-foreground: 43 100% 90%;
+        --border: 260 25% 15%; /* Dark witchy purple */
+        --input: 260 25% 15%;
+        --ring: 35 78% 50%; /* Glowing pumpkin ring */
+        --chart-1: 35 78% 50%; /* Pumpkin orange */
+        --chart-2: 43 100% 90%; /* Ghostly white */
+        --chart-3: 0 84.2% 45%; /* Blood red */
+        --chart-4: 43 100% 50%; /* Bright pumpkin */
+        --chart-5: 210 70% 30%; /* Shadowy blue */
+     }
+  }
+    ```
+  </TabsContent>
+  <TabsContent value="syntax">
+    ```css
+    /* halloween */
+    /* Light Mode */
+    .keyword {
+        color: #d97706;
+        /* Pumpkin Orange */
+    }
+
+    .function {
+        color: #9333ea;
+        /* Mystic Purple */
+    }
+
+    .punctuation {
+        color: #4b5563;
+        /* Dark Gray */
+    }
+
+    .comment {
+        color: #6b7280;
+        /* Muted Gray */
+    }
+
+    .string,
+    .constant,
+    .annotation,
+    .boolean,
+    .number {
+        color: #f59e0b;
+        /* Witch’s Brew Amber */
+    }
+
+    .tag {
+        color: #c026d3;
+        /* Magenta Potion */
+    }
+
+    .attr-name {
+        color: #16a34a;
+        /* Poison Green */
+    }
+
+    .attr-value {
+        color: #db2777;
+        /* Pink Potion */
+    }
+
+    /* Dark Mode */
+    .dark .keyword {
+        color: #fbbf24;
+        /* Candlelight Yellow */
+    }
+
+    .dark .function {
+        color: #e879f9;
+        /* Enchanted Magenta */
+    }
+
+    .dark .string,
+    .dark .constant,
+    .dark .annotation,
+    .dark .boolean,
+    .dark .number {
+        color: #f59e0b;
+        /* Glowing Amber */
+    }
+
+    .dark .tag {
+        color: #f472b6;
+        /* Haunted Pink */
+    }
+
+    .dark .attr-name {
+        color: #a3e635;
+        /* Toxic Green */
+    }
+
+    .dark .attr-value {
+        color: #fb7185;
+        /* Blood Moon Pink */
+    }
+    ```
+  </TabsContent>
+</Tabs>
+
+
+
+### Ocean Theme
+
+The Ocean theme presents soothing colors drawn from the depths of the sea, fostering a tranquil reading environment. Its design evokes a sense of calm, enhancing the overall experience for users.
+
+<Tabs defaultValue="global" className="pt-5 pb-1">
+  <TabsList>
+    <TabsTrigger value="global">globals.css</TabsTrigger>
+    <TabsTrigger value="syntax">syntax.css</TabsTrigger>
+  </TabsList>
+  <TabsContent value="global">
+    ```css
+    /* ocean */
+    @layer base {
+        :root {
+            --background: 210 50% 95%; /* Soft light blue */
+            --foreground: 220 20% 15%; /* Deep navy */
+            --card: 210 40% 98%; /* Almost white blue */
+            --card-foreground: 220 20% 15%;
+            --popover: 210 40% 98%;
+            --popover-foreground: 220 20% 15%;
+            --primary: 220 80% 60%; /* Vibrant azure blue */
+            --primary-foreground: 210 50% 95%;
+            --secondary: 220 30% 85%; /* Light sky blue */
+            --secondary-foreground: 220 20% 15%;
+            --muted: 220 30% 85%;
+            --muted-foreground: 220 20% 40%; /* Soft steel blue */
+            --accent: 200 70% 40%; /* Strong ocean blue */
+            --accent-foreground: 0 0% 100%; /* Pure white */
+            --destructive: 0 65% 55%; /* Soft red */
+            --destructive-foreground: 220 20% 95%; /* Lightened foreground */
+            --border: 220 15% 90%; /* Light grey-blue */
+            --input: 220 15% 90%;
+            --ring: 220 40% 50%; /* Cool blue ring */
+            --radius: 0.5rem;
+            --chart-1: 210 60% 50%; /* Classic blue */
+            --chart-2: 220 40% 65%; /* Soft sky */
+            --chart-3: 220 70% 50%; /* Azure blue */
+            --chart-4: 200 60% 55%; /* Ocean blue */
+            --chart-5: 240 30% 40%; /* Deep teal */
+        }
+
+        .dark {
+            --background: 220 20% 10%; /* Midnight navy */
+            --foreground: 220 80% 90%; /* Soft sky blue */
+            --card: 220 20% 12%; /* Slightly lighter midnight */
+            --card-foreground: 220 80% 90%;
+            --popover: 220 20% 12%;
+            --popover-foreground: 220 80% 90%;
+            --primary: 210 70% 60%; /* Soft bright blue */
+            --primary-foreground: 220 20% 10%;
+            --secondary: 220 30% 15%; /* Dark steel blue */
+            --secondary-foreground: 220 80% 90%;
+            --muted: 220 30% 15%;
+            --muted-foreground: 210 20% 85%; /* Pale navy */
+            --accent: 220 80% 60%; /* Vibrant azure blue */
+            --accent-foreground: 220 80% 90%;
+            --destructive: 0 65% 55%; /* Soft red */
+            --destructive-foreground: 220 80% 90%;
+            --border: 220 30% 15%; /* Dark steel blue */
+            --input: 220 30% 15%;
+            --ring: 220 60% 60%; /* Vivid blue ring */
+            --chart-1: 210 60% 50%; /* Classic blue */
+            --chart-2: 220 40% 65%; /* Soft sky */
+            --chart-3: 220 70% 50%; /* Azure blue */
+            --chart-4: 200 60% 55%; /* Ocean blue */
+            --chart-5: 240 30% 40%; /* Deep teal */
+        }
+    }
+    ```
+  </TabsContent>
+  <TabsContent value="syntax">
+    ```css
+    /* ocean */
+    /* Light Mode */
+    .keyword {
+        color: #2563eb;
+        /* Vibrant Blue */
+    }
+
+    .function {
+        color: #0284c7;
+        /* Deep Sky Blue */
+    }
+
+    .punctuation {
+        color: #475569;
+        /* Cool Slate Gray */
+    }
+
+    .comment {
+        color: #64748b;
+        /* Muted Slate */
+    }
+
+    .string,
+    .constant,
+    .annotation,
+    .boolean,
+    .number {
+        color: #0369a1;
+        /* Dark Cyan */
+    }
+
+    .tag {
+        color: #1e40af;
+        /* Indigo */
+    }
+
+    .attr-name {
+        color: #0ea5e9;
+        /* Light Sky Blue */
+    }
+
+    .attr-value {
+        color: #2563eb;
+        /* Bright Blue */
+    }
+
+    /* Dark Mode */
+    .dark .keyword {
+        color: #93c5fd;
+        /* Soft Blue */
+    }
+
+    .dark .function {
+        color: #38bdf8;
+        /* Sky Blue */
+    }
+
+    .dark .string,
+    .dark .constant,
+    .dark .annotation,
+    .dark .boolean,
+    .dark .number {
+        color: #60a5fa;
+        /* Light Blue */
+    }
+
+    .dark .tag {
+        color: #3b82f6;
+        /* Bold Blue */
+    }
+
+    .dark .attr-name {
+        color: #67e8f9;
+        /* Aqua */
+    }
+
+    .dark .attr-value {
+        color: #93c5fd;
+        /* Frosty Blue */
+    }
+    ```
+  </TabsContent>
+</Tabs>
+
+For additional themes, visit this fantastic website with pre-made Shadcn themes: https://tinte.railly.dev/shadcn

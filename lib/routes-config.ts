@@ -9,46 +9,49 @@ export type EachRoute = {
 
 export const ROUTES: EachRoute[] = [
   {
-    title: 'Getting Started',
-    href: '/getting-started',
+    title: 'OER Lab',
+    href: '/get-started',
     noLink: true,
     items: [
-      { title: 'Introduction', href: '/introduction' },
-      {
-        title: 'Installation',
-        href: '/installation',
-      },
+      { title: 'Overview', href: '/overview' },
       { title: 'Quick Start Guide', href: '/quick-start-guide' },
-      {
-        title: 'Project Structure',
-        href: '/project-structure',
-      },
-      {
-        title: 'Components',
-        href: '/components',
-        items: [
-          { title: 'Stepper', href: '/stepper' },
-          { title: 'Tabs', href: '/tabs' },
-          { title: 'Note', href: '/note' },
-          { title: 'Code Block', href: '/code-block' },
-          { title: 'Image & Link', href: '/image-link' },
-          { title: 'Custom', href: '/custom' },
-        ],
-      },
-      { title: 'Themes', href: '/themes' },
-      {
-        title: 'Customize',
-        href: '/customize',
-      },
     ],
   },
   {
-    title: 'Pressbooks-Tailwind',
-    href: '/pressbooks-tailwind',
+    title: 'Pressbooks',
+    href: '/pressbooks',
     noLink: true,
     items: [
-      { title: 'Introduction', href: '/introduction' },
-      { title: 'Components', href: '/components' },
+      {
+        title: 'Overview',
+        href: '/overview',
+      },
+      {
+        title: 'Styling',
+        href: '/styling',
+        noLink: true,
+        items: [
+          { title: 'Introduction', href: '/introduction' },
+          { title: 'Usage', href: '/usage' },
+          {
+            title: 'Attributes',
+            href: '/attributes',
+            noLink: true,
+            items: [
+              { title: 'Display', href: '/display' },
+              { title: 'Spacing', href: '/spacing' },
+            ],
+          },
+          {
+            title: 'Components',
+            href: '/components',
+            items: [
+              { title: 'Headings', href: '/tabs' },
+              { title: 'Accordion', href: '/stepper' },
+            ],
+          },
+        ],
+      },
     ],
   },
 ]
