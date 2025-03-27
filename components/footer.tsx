@@ -14,7 +14,10 @@ export function Footer() {
               Carlos
             </Link>{' '}
             (for now). The source code is available on{' '}
-            <Link className="underline underline-offset-2" href="https://github.com/CentennialOERLab/student-site">
+            <Link
+              className="underline underline-offset-2"
+              href="https://github.com/Centennial-College-OER-Lab/student-site"
+            >
               GitHub
             </Link>
             .
@@ -40,7 +43,7 @@ export function FooterButtons() {
         Deploy
       </Link>
       <Link
-        href="https://github.com/sponsors/CentennialOERLab"
+        href="https://github.com/Centennial-College-OER-Lab/student-site"
         className={buttonVariants({ variant: 'outline', size: 'sm' })}
       >
         <HeartIcon className="h-4 w-4 mr-2 text-red-600 fill-current" />
