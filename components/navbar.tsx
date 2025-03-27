@@ -41,7 +41,7 @@ export function Navbar() {
             <Search />
             <div className="flex ml-2.5 sm:ml-0">
               <Link
-                href="https://github.com/CentennialOERLab/student-site"
+                href="https://github.com/Centennial-College-OER-Lab/student-site"
                 className={buttonVariants({ variant: 'ghost', size: 'icon' })}
               >
                 <Icons.gitHub className="h-[1.1rem] w-[1.1rem]" />

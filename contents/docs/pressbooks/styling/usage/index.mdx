@@ -1,0 +1,156 @@
+---
+title: Using Pressbooks-Tailwind Utilities
+description: Learn how to use and extend Pressbooks-Tailwind utility classes in your Pressbooks projects.
+---
+
+This section will guide you through how to use existing utilities and how to extend the system by adding new ones.
+
+## Usage
+
+Pressbooks-Tailwind is designed to be integrated directly into your Pressbooks theme's Sass files.  Here's how to use and extend it:
+
+### 1. Fork and Clone the Theme Repository (If Contributing New Utilities)
+
+This step is **only necessary if you plan to contribute new utility classes** back to the main Pressbooks-Tailwind system for everyone in the OER lab to use. If you are just using existing utilities or experimenting locally, you can skip to step 2 within your own theme.
+
+<Stepper>
+  <StepperItem title="Fork the Theme Repository">
+    If you haven't already, fork the repository that contains the Pressbooks-Tailwind Sass files (likely your OER lab's base Pressbooks theme repository) on GitHub. This creates a copy of the repository under your own account.
+  </StepperItem>
+
+  <StepperItem title="Clone Your Forked Repository">
+    Clone your forked repository to your local development environment:
+
+    ```plaintext
+    git clone https://github.com/YOUR-USERNAME/YOUR-FORKED-REPOSITORY.git
+    ```
+    Replace `YOUR-USERNAME/YOUR-FORKED-REPOSITORY.git` with the actual URL of your forked repository.
+  </StepperItem>
+</Stepper>
+
+### 2. Add New Utility Classes to `pressbooks.scss`
+
+This is where you extend Pressbooks-Tailwind with your own utility classes using the provided `generate-utilities` mixin.
+
+<Stepper>
+  <StepperItem title="Locate `pressbooks.scss`">
+    Navigate to your Pressbooks theme's directory and find the main Sass file where Pressbooks-Tailwind utilities are defined. This is typically named `pressbooks.scss` or `style.scss` and is usually located in the theme's `assets/sass` or root directory.
+  </StepperItem>
+
+  <StepperItem title="Use the `generate-utilities` Mixin">
+    Open `pressbooks.scss` and locate the section where utility classes are being generated.  To add new utility classes, use the `@include generate-utilities(...)` mixin.
+
+    **Example: Adding `rounded-t-xl` and `rounded-b-xl` utility classes**
+
+    Let's say you want to add extra-large top and bottom rounded corners. You would add the following to your `pressbooks.scss` file:
+
+    ```scss
+    // ... other utility generation ...
+
+    @include generate-utilities('rounded-t', ('border-top-left-radius', 'border-top-right-radius'), $radius-values);
+    @include generate-utilities('rounded-b', ('border-bottom-left-radius', 'border-bottom-right-radius'), $radius-values);
+
+    // Add new xl size to radius values (if not already defined)
+    $radius-values: (
+      // ... existing sizes ...
+      'xl':   .75rem,
+      '2xl':  1rem,
+      '3xl':  1.5rem,
+      '4xl':  2rem,
+      'full': 9999px,
+    );
+
+    @include generate-utilities('rounded-t', ('border-top-left-radius', 'border-top-right-radius'), $radius-values);
+    @include generate-utilities('rounded-b', ('border-bottom-left-radius', 'border-bottom-right-radius'), $radius-values);
+    ```
+
+    **Explanation:**
+
+    *   `@include generate-utilities('rounded-t', ...)`:  Calls the mixin to generate utilities for rounded top corners.
+    *   `'rounded-t'`:  This is the **property prefix**. It will be used to create class names like `.rounded-t-sm`, `.rounded-t-md`, etc.
+    *   `('border-top-left-radius', 'border-top-right-radius')`:  This is a **list of CSS properties** that will be applied by these utilities.
+    *   `$radius-values`:  This is a **Sass map** (likely already defined in your `pressbooks.scss` or variables file) that contains the available size names (e.g., `sm`, `md`, `lg`, `xl`) and their corresponding radius values (e.g., `.25rem`, `.5rem`, etc.).  **You may need to extend `$radius-values` if you are adding new sizes.**
+
+    **Refer to the [Utilities Reference](/path-to-utilities-reference) section for details on available `$values` maps and how to use the `generate-utilities` mixin.**
+
+  </StepperItem>
+</Stepper>
+
+### 3. Test New Utility Classes in Your Pressbooks Clone (Custom Styles)
+
+Before committing your changes, test your new utility classes directly within your Pressbooks environment.
+
+<Stepper>
+  <StepperItem title="Compile Your Sass">
+    Compile your `pressbooks.scss` file into CSS. The exact command for this will depend on your theme's build process. It might be something like:
+
+    ```plaintext
+    npm run build-css  # Example command, check your theme's documentation
+    ```
+
+    or if you are using `gulp`:
+
+    ```plaintext
+    gulp styles        # Example command for gulp
+    ```
+
+    This will generate the compiled CSS file (e.g., `style.css` or `theme.css`) that Pressbooks uses.
+  </StepperItem>
+
+  <StepperItem title="Apply Utility Classes in Pressbooks (Custom Styles)">
+    Log in to your Pressbooks instance and navigate to **Appearance → Custom Styles**. In the Custom Styles editor, you can add HTML markup to test your new utility classes.
+
+    **Example Test Markup:**
+
+    ```html
+    <div class="rounded-t-xl bg-gray-100 p-4 mb-4">
+      This div has extra-large rounded top corners.
+    </div>
+
+    <div class="rounded-b-xl bg-gray-100 p-4">
+      This div has extra-large rounded bottom corners.
+    </div>
+    ```
+
+    Preview your book or chapter to see if the `rounded-t-xl` and `rounded-b-xl` classes are applying the styles as expected.
+  </StepperItem>
+</Stepper>
+
+### 4. Submit a Pull Request (If Contributing)
+
+If you added new utility classes that you believe would be valuable for the entire OER lab, submit a pull request to the original repository.
+
+<Stepper>
+  <StepperItem title="Commit Your Changes">
+    Commit your changes to your forked repository with a descriptive commit message:
+
+    ```plaintext
+    git add assets/sass/pressbooks.scss  # Or the relevant file
+    git commit -m "feat: Add rounded-t-xl and rounded-b-xl utility classes"
+    ```
+  </StepperItem>
+
+  <StepperItem title="Push Changes to Your Fork">
+    Push your commit to your forked repository on GitHub:
+
+    ```plaintext
+    git push origin main # Or your branch name
+    ```
+  </StepperItem>
+
+  <StepperItem title="Create a Pull Request">
+    Go to the original repository on GitHub. You should see a prompt to create a pull request from your fork. Click "Compare & pull request" and follow the instructions to submit your pull request.
+
+    **In your pull request description, clearly explain:**
+
+    *   What new utility classes you added and why.
+    *   Provide example use cases for these utilities.
+    *   Reference any relevant discussions or issues.
+  </StepperItem>
+</Stepper>
+
+**Congratulations!** You have now learned how to use and extend Pressbooks-Tailwind utilities. By following these steps, you can contribute to a more consistent and efficient styling system for all OER lab Pressbooks projects.
+
+<Note title="Contributing is Encouraged!">
+  The power of Pressbooks-Tailwind comes from its shared utility set. We encourage you to contribute new utility classes that you find yourself needing in your projects. By sharing your contributions, you help make Pressbooks-Tailwind more comprehensive and valuable for everyone in the OER lab.
+</Note>
