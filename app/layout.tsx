@@ -8,7 +8,7 @@ import { cn } from '@/lib/utils'
 
 export const metadata: Metadata = {
   title: 'Centennial College OER Lab - Student Site',
-  metadataBase: new URL('https://oerlab.vercel.app/'),
+  metadataBase: new URL('https://student-site-2y4n.onrender.com'),
   description:
     'The Centennial College OER Lab is a student-led initiative to promote the use of open educational resources (OER) at Centennial College.',
 }
