@@ -1,8 +1,8 @@
+import { Authors } from '@/components/authors'
 import { getBlogForSlug } from '@/lib/markdown'
 import { ImageResponse } from 'next/og'
 import { readFile } from 'node:fs/promises'
 import { join } from 'node:path'
-import { Authors } from './page'
 
 // Image metadata
 export const alt = 'doneeee'
