@@ -3,7 +3,7 @@ import { readFile } from 'node:fs/promises'
 import { join } from 'node:path'
 
 // Image metadata
-export const alt = 'About Acme'
+export const alt = 'alt textttt'
 export const size = {
   width: 1200,
   height: 630,
@@ -30,7 +30,7 @@ export default async function Image() {
           justifyContent: 'center',
         }}
       >
-        About Acme
+        blogpost
       </div>
     ),
     // ImageResponse options

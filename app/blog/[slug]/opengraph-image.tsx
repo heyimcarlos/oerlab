@@ -5,7 +5,7 @@ import { join } from 'node:path'
 import { Authors } from './page'
 
 // Image metadata
-export const alt = 'About Acme'
+export const alt = 'doneeee'
 export const size = {
   width: 1200,
   height: 630,
@@ -54,6 +54,7 @@ export default async function Image({ params }: { params: { slug: string } }) {
     {
       // For convenience, we can re-use the exported opengraph-image
       // size config to also set the ImageResponse's width and height.
+      debug: true,
       ...size,
       fonts: [
         {
