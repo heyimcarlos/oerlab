@@ -1,8 +1,8 @@
 import { Authors } from '@/components/authors'
 import { getBlogForSlug } from '@/lib/markdown'
 import { ImageResponse } from 'next/og'
-import { readFile } from 'node:fs/promises'
-import { join } from 'node:path'
+// import { readFile } from 'node:fs/promises'
+// import { join } from 'node:path'
 
 // Image metadata
 export const alt = 'doneeee'
@@ -16,7 +16,7 @@ export const contentType = 'image/png'
 // Image generation
 export default async function Image({ params }: { params: { slug: string } }) {
   // Font loading, process.cwd() is Next.js project directory
-  const interSemiBold = await readFile(join(process.cwd(), 'assets/Inter-SemiBold.ttf'))
+  // const interSemiBold = await readFile(join(process.cwd(), ''))
 
   const res = await getBlogForSlug(params.slug)
   if (!res) return null
@@ -56,14 +56,14 @@ export default async function Image({ params }: { params: { slug: string } }) {
       // size config to also set the ImageResponse's width and height.
       debug: true,
       ...size,
-      fonts: [
-        {
-          name: 'Inter',
-          data: interSemiBold,
-          style: 'normal',
-          weight: 400,
-        },
-      ],
+      // fonts: [
+      //   {
+      //     name: 'Inter',
+      //     data: interSemiBold,
+      //     style: 'normal',
+      //     weight: 400,
+      //   },
+      // ],
     }
   )
 }
