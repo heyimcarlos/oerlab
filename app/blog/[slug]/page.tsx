@@ -82,7 +82,7 @@ export default async function BlogPage(props: PageProps) {
   );
 }
 
-function Authors({ authors }: { authors: Author[] }) {
+export function Authors({ authors }: { authors: Author[] }) {
   return (
     <div className="flex items-center gap-8 flex-wrap">
       {authors.map((author) => {
@@ -100,13 +100,11 @@ function Authors({ authors }: { authors: Author[] }) {
             </Avatar>
             <div className="">
               <p className="text-sm font-medium">{author.username}</p>
-              <p className="font-code text-[13px] text-muted-foreground">
-                @{author.handle}
-              </p>
+              <p className="font-code text-[13px] text-muted-foreground">@{author.handle}</p>
             </div>
           </Link>
-        );
+        )
       })}
     </div>
-  );
+  )
 }
