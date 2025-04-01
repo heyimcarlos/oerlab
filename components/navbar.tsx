@@ -18,6 +18,10 @@ export const NAVLINKS = [
     title: 'Blog',
     href: '/blog',
   },
+  {
+    title: 'Projects',
+    href: '/projects',
+  },
 ]
 
 export function Navbar() {
