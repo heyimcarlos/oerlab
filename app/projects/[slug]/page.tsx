@@ -59,7 +59,7 @@ export default async function ProjectPage(props: PageProps) {
         </div> */}
       </div>
       <div className="!w-full">
-        <div className="w-full mb-7">
+        {/* <div className="w-full mb-7">
           <Image
             src={res.frontmatter.cover}
             alt="cover"
@@ -67,7 +67,7 @@ export default async function ProjectPage(props: PageProps) {
             height={400}
             className="w-full h-[400px] rounded-md border object-cover"
           />
-        </div>
+        </div> */}
         <Typography>{res.content}</Typography>
       </div>
     </div>
