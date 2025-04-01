@@ -1,6 +1,6 @@
 import { Typography } from '@/components/typography'
 import { buttonVariants } from '@/components/ui/button'
-import { getAllBlogStaticPaths, getBlogForSlug } from '@/lib/markdown'
+import { BlogMdxFrontmatter, getAllStaticPaths, getFile } from '@/lib/markdown'
 import { ArrowLeftIcon } from 'lucide-react'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
@@ -18,7 +18,7 @@ export async function generateMetadata(props: PageProps): Promise<Metadata | nul
 
   const { slug } = params
 
-  const res = await getBlogForSlug(slug)
+  const res = await getFile<BlogMdxFrontmatter>(slug, 'blogs')
   if (!res) return null
   const { frontmatter } = res
   return {
@@ -28,7 +28,7 @@ export async function generateMetadata(props: PageProps): Promise<Metadata | nul
 }
 
 export async function generateStaticParams() {
-  const val = await getAllBlogStaticPaths()
+  const val = await getAllStaticPaths('blogs')
   if (!val) return []
   return val.map((it) => ({ slug: it }))
 }
@@ -38,7 +38,7 @@ export default async function BlogPage(props: PageProps) {
 
   const { slug } = params
 
-  const res = await getBlogForSlug(slug)
+  const res = await getFile<BlogMdxFrontmatter>(slug, 'blogs')
   if (!res) notFound()
   return (
     <div className="lg:w-[60%] sm:[95%] md:[75%] mx-auto">
