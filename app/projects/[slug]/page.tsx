@@ -5,7 +5,7 @@ import { ArrowLeftIcon } from 'lucide-react'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { formatDate } from '@/lib/utils'
-import Image from 'next/image'
+// import Image from 'next/image'
 import { Metadata } from 'next'
 
 type PageProps = {
