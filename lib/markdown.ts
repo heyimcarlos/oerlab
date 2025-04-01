@@ -1,4 +1,4 @@
-import { compileMDX } from 'next-mdx-remote/rsc'
+import { compileMDX, CompileMDXResult } from 'next-mdx-remote/rsc'
 import path from 'path'
 import { promises as fs } from 'fs'
 import remarkGfm from 'remark-gfm'
@@ -64,11 +64,28 @@ async function parseMdx<Frontmatter>(rawMdx: string) {
   })
 }
 
-// logic for docs
+export type Author = {
+  avatar?: string
+  handle: string
+  username: string
+  handleUrl: string
+}
 
 export type BaseMdxFrontmatter = {
   title: string
   description: string
+  archived: boolean
+}
+
+export type BlogMdxFrontmatter = BaseMdxFrontmatter & {
+  date: string
+  authors: Author[]
+  cover: string
+}
+
+export type ProjectsMdxFrontmatter = BaseMdxFrontmatter & {
+  date: string
+  cover: string
 }
 
 export async function getDocsForSlug(slug: string) {
@@ -170,39 +187,16 @@ const postProcess = () => (tree: any) => {
   })
 }
 
-export type Author = {
-  avatar?: string
-  handle: string
-  username: string
-  handleUrl: string
-}
-
-export type BlogMdxFrontmatter = BaseMdxFrontmatter & {
-  date: string
-  authors: Author[]
-  cover: string
-  archived: boolean
-}
-
-export async function getAllBlogStaticPaths() {
-  try {
-    const blogFolder = path.join(process.cwd(), '/contents/blogs/')
-    const res = await fs.readdir(blogFolder)
-    return res.map((file) => file.split('.')[0])
-  } catch (err) {
-    console.log(err)
-  }
-}
-export async function getAllBlogs() {
-  const blogFolder = path.join(process.cwd(), '/contents/blogs/')
-  const files = await fs.readdir(blogFolder)
+export async function getAll<T extends BaseMdxFrontmatter>(dirname: string) {
+  const dir = path.join(process.cwd(), `/contents/${dirname}/`)
+  const files = await fs.readdir(dir)
   const uncheckedRes = await Promise.all(
     files.map(async (file) => {
       if (!file.endsWith('.mdx')) return undefined
-      const filepath = path.join(process.cwd(), `/contents/blogs/${file}`)
+      const filepath = path.join(process.cwd(), `/contents/${dirname}/${file}`)
       const rawMdx = await fs.readFile(filepath, 'utf-8')
       return {
-        ...justGetFrontmatterFromMD<BlogMdxFrontmatter>(rawMdx),
+        ...justGetFrontmatterFromMD<T>(rawMdx),
         slug: file.split('.')[0],
       }
     })
@@ -212,17 +206,30 @@ export async function getAllBlogs() {
       return false
     }
     return !it.archived
-  }) as (BlogMdxFrontmatter & {
+  }) as (T & {
     slug: string
   })[]
 }
 
-export async function getBlogForSlug(slug: string) {
-  const blogFile = path.join(process.cwd(), '/contents/blogs/', `${slug}.mdx`)
+export async function getFile<T extends BaseMdxFrontmatter>(
+  slug: string,
+  dirname: string
+): Promise<CompileMDXResult<T> | undefined> {
+  const file = path.join(process.cwd(), `/contents/${dirname}`, `${slug}.mdx`)
   try {
-    const rawMdx = await fs.readFile(blogFile, 'utf-8')
-    return await parseMdx<BlogMdxFrontmatter>(rawMdx)
+    const rawMdx = await fs.readFile(file, 'utf-8')
+    return await parseMdx<T>(rawMdx)
   } catch {
     return undefined
+  }
+}
+
+export async function getAllStaticPaths(dirname: string) {
+  try {
+    const dir = path.join(process.cwd(), `/contents/${dirname}/`)
+    const res = await fs.readdir(dir)
+    return res.map((file) => file.split('.')[0])
+  } catch (err) {
+    console.log(err)
   }
 }
