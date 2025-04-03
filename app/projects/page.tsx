@@ -12,7 +12,6 @@ export default async function ProjectsIndexPage() {
   const projects = (await getAll<ProjectsMdxFrontmatter>('projects')).sort(
     (a, b) => stringToDate(b.date).getTime() - stringToDate(a.date).getTime()
   )
-  console.log('projects', projects)
   return (
     <div className="w-full mx-auto flex flex-col gap-1 max-w-screen-sm sm:min-h-[91vh] min-h-[88vh] pt-2">
       <div className="mb-7 flex flex-col gap-2">
