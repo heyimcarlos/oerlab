@@ -18,6 +18,10 @@ export const NAVLINKS = [
     title: 'Blog',
     href: '/blog',
   },
+  {
+    title: 'Team', // 👈 新增这一项
+    href: '/team',
+  },
 ]
 
 export function Navbar() {
