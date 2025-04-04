@@ -1,0 +1,117 @@
+---
+title: "An Introduction to Common Git Commands"
+description: "This guide offers a quick reference to commonly used Git commands, starting with a clear explanation of the difference between Git and GitHub."
+date: 03-04-2025
+authors:
+  - avatar: "/team/leslie.JPG"
+    handle: Leslie
+    username: Leslie Cui
+    handleUrl: "https://www.linkedin.com/in/leslie-lc"
+cover: "/pressbooks-getting-started-student/cover.jpg"
+archived: false
+tags: [pressbooks, oer, onboarding, developers, student]
+---
+
+While this cheat sheet focuses on commonly used Git commands, it is important to begin by clarifying the distinction between Git and GitHub, as the two are often mistakenly used interchangeably.
+
+**Git**  is a distributed version control system. It runs locally on your computer and helps you track changes in your code, manage different versions, and collaborate with others by merging updates. You can use Git without any internet connection, and it's primarily a tool for managing your source code history.
+
+**GitHub**, on the other hand, is a cloud-based hosting platform for Git repositories. It allows you to store your Git-managed projects online, making it easy to share your work, collaborate with teammates, and contribute to open-source projects. GitHub also provides extra features such as issue tracking, pull requests, code reviews, and GitHub Actions for automation.
+
+In short:
+
+-   **Git**  is the version control tool.
+    
+-   **GitHub**  is a platform that hosts your Git repositories and adds collaboration features.
+    
+You can think of Git as the engine that powers your code history, while GitHub is the garage where you store and manage that engine with others.
+
+### 1. **Installation & Configuration**
+Git can be installed from [git-scm.com](http://git-scm.com), with platform-specific versions for Windows and Mac. After installation, you should configure your identity:
+```bash
+git config --global user.name "[Your Name]"
+git config --global user.email "[Your Email]"
+git config --global color.ui auto
+```
+These commands set your username, email, and enable color output for better readability.
+
+### 2. **Starting a Repository**
+To create or clone a repository:
+```bash
+git init        # Initialize a new Git repo
+git clone [url] # Clone an existing repo
+```
+
+### 3. **Staging & Committing**
+These commands help you prepare changes and save snapshots:
+```bash
+git status                 # View changes
+git add [file]             # Stage a file
+git reset [file]           # Unstage a file
+git diff                   # Show unstaged differences
+git diff --staged          # Show staged differences
+git commit -m "message"    # Commit staged changes
+```
+
+### 4. **Branching & Merging**
+Branches allow you to work on features independently:
+```bash
+git branch                 # List all branches
+git branch [name]          # Create new branch
+git checkout [name]        # Switch branches
+git merge [name]           # Merge branch into current
+git log                    # Show commit history
+```
+
+### 5. **Inspect & Compare**
+To analyze changes or object history:
+```bash
+git log branchB..branchA   # Show commits in branchA not in branchB
+git log --follow [file]    # Show file history through renames
+git diff branchB..branchA  # Show code differences
+git show [SHA]             # View object details by commit hash
+```
+
+### 6. **Remote Repositories**
+Work with remote repositories:
+```bash
+git remote add [alias] [url] # Add a remote
+git fetch [alias]            # Download updates
+git merge [alias]/[branch]   # Merge remote changes
+git push [alias] [branch]    # Upload local changes
+git pull                     # Fetch and merge updates
+```
+
+### 7. **Tracking Changes**
+Handle file renames, deletions, and moves:
+```bash
+git rm [file]                         # Delete a file
+git mv [old-path] [new-path]         # Rename or move a file
+git log --stat -M                    # Show moved file history
+```
+
+### 8. **Ignoring Files**
+Prevent certain files from being tracked:
+- Add rules in `.gitignore`
+- Use:  
+  ```bash
+  git config --global core.excludesfile [file]
+  ```
+
+### 9. **Rewriting History**
+To adjust past commits or reset to a clean state:
+```bash
+git rebase [branch]           # Replay changes on top of another branch
+git reset --hard [commit]     # Reset to a specific commit
+```
+
+### 10. **Stashing Changes**
+Temporarily store unfinished changes:
+```bash
+git stash             # Save changes
+git stash list        # View stashes
+git stash pop         # Apply and remove the latest stash
+git stash drop        # Discard the latest stash
+```
+
+ 
