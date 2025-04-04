@@ -31,6 +31,10 @@ export function FooterButtons() {
         <HeartIcon className="h-4 w-4 mr-2 text-red-600 fill-current" />
         About us
       </Link>
+      <Link href="/contact" className={buttonVariants({ variant: 'outline', size: 'sm' })}>
+        <HeartIcon className="h-4 w-4 mr-2 text-red-600 fill-current" />
+        Contact us
+      </Link>
       <Link
         href="https://github.com/Centennial-College-OER-Lab/student-site"
         className={buttonVariants({ variant: 'outline', size: 'sm' })}
