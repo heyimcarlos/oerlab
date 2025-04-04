@@ -1,0 +1,277 @@
+---
+title: "Evaluating Tailwind CSS for Pressbooks: Challenges and Alternatives"
+description: "This article evaluates the use of Tailwind CSS within Pressbooks, highlighting its challenges—especially in PDF exports—and exploring practical alternatives for responsive design."
+date: 24-03-2025
+authors:
+  - avatar: "/team/leslie.JPG"
+    handle: Leslie
+    username: Leslie Cui
+    handleUrl: "https://www.linkedin.com/in/leslie-lc"
+cover: "/pressbooks-getting-started-student/cover.jpg"
+archived: false
+tags: [pressbooks, oer, onboarding, developers, student]
+---
+## Background: 
+After completing an entire book using Tailwind CSS, challenges arose when exporting it to PDF. Tailwind CSS is a valuable and worthwhile technology stack for students, offering a streamlined approach to styling. However, if it cannot be effectively applied within Pressbooks or if its use significantly increases the time required to complete a book, it raises the question of whether Tailwind CSS should be adopted for future projects on this platform.
+
+At the time, a key debate centered around whether  **Tailwind CSS was essential for achieving responsive design**  or if alternative methods could accomplish the same goal. Additionally, an urgent issue needed to be addressed—**how to ensure that the PDF version of the book maintains the expected styling**.
+
+This research aims to explore this issue, examining the feasibility of using Tailwind CSS in Pressbooks and identifying potential solutions to ensure a smooth PDF export process. Additionally, the findings will contribute to resolving the PDF export challenges faced in the ongoing development of a physics textbook.
+
+
+## 1. Vanilla CSS, Sass and SCSS
+
+Vanilla CSS is the standard, plain CSS that comes built into web browsers, serving as the foundation of styling without any additional tools or preprocessing. Sass, on the other hand, is a powerful CSS preprocessor that enhances CSS with programming-like capabilities, such as variables, nesting, and functions, but requires compilation into regular CSS before browsers can interpret it. SCSS, a more modern syntax of Sass, retains all of Sass’s functionalities while maintaining a syntax that closely resembles traditional CSS. As a superset of CSS, SCSS ensures that all valid CSS code is also valid SCSS, making it easier for developers to transition from standard CSS while benefiting from Sass’s advanced features.
+
+This Sass code is written in **SCSS syntax**, rather than the older indented syntax of Sass. The evidence supporting this conclusion includes the following:
+
+1) Use of Curly Braces `{}`
+2) Use of Semicolons `;`
+3) Use of Variable Declarations with `$`
+4) Use of `@each` and `@mixin` with Curly Braces
+
+```scss
+@each $breakpoint-key, $breakpoint-value in $breakpoints {
+      .#{$breakpoint-key}\\:#{$property-prefix}-#{$name} {
+        @media (min-width: $breakpoint-value) {
+          @each $prop in $property {
+            #{$prop}: $value;
+          } } } }
+```
+
+## 2. Ways to achieve responsive design
+
+2.1 Brief explanation
+There are several ways to achieve responsive design in CSS.
+
+ - layout
+	 -  Flexbox: The CSS Flexbox Layout should be used for one-dimensional layout, with rows OR columns.
+	![layout](/evaluating-tailwind-css-for-pressbooks/picture1.png)
+	 - Grid: The CSS Grid Layout should be used for two-dimensional layout, with rows AND columns.
+![Grid](/evaluating-tailwind-css-for-pressbooks/grid.png)
+ - Relative length units: em, rem, vw, wh, vmin, vmax, %, etc
+![Relative length units](/evaluating-tailwind-css-for-pressbooks/relative-length-units.png)
+ - Media Queries
+![Break point 1](/evaluating-tailwind-css-for-pressbooks/media-break-point.png)
+```css
+@media only screen and (max-width: 600px) {
+  .item1 { grid-area: 1 / span 6; }
+  .item2 { grid-area: 2 / span 6; }
+  .item3 { grid-area: 3 / span 6; }
+  .item4 { grid-area: 4 / span 6; }
+  .item5 { grid-area: 5 / span 6; }
+}
+```
+![Break point 2](/evaluating-tailwind-css-for-pressbooks/media-break-point-3.png)
+```css
+@media only screen and (max-width: 600px) {
+  .item1 { grid-area: 1 / span 6; }
+  .item2 { grid-area: 2 / span 6; }
+  .item3 { grid-area: 3 / span 6; }
+  .item4 { grid-area: 4 / span 6; }
+  .item5 { grid-area: 5 / span 6; }
+}
+
+@media only screen and (min-width: 600px) {
+  .item1 { grid-area: 1 / span 6; }
+  .item2 { grid-area: 2 / span 1; }
+  .item3 { grid-area: 2 / span 4; }
+  .item4 { grid-area: 3 / span 6; }
+  .item5 { grid-area: 4 / span 6; }
+}
+
+@media only screen and (min-width: 768px) {
+  .item1 { grid-area: 1 / span 6; }
+  .item2 { grid-area: 2 / span 1; }
+  .item3 { grid-area: 2 / span 4; }
+  .item4 { grid-area: 2 / span 1; }
+  .item5 { grid-area: 3 / span 6; }
+}
+```
+ - Image Handling
+	 - max-width, min-width, object-fit, object-position, et
+ - Font Control
+	 - font-size, line-height, font-size-adjust, etc
+ - Overflow Control
+	 - The overflow property specifies whether to clip the content or to add scrollbars when the content of an element is too big to fit in the specified area.
+![Overflow Control](/evaluating-tailwind-css-for-pressbooks/overflow.png)
+ - Others: Container Queries, Position and Display, Box Model Properties, etc.
+
+2.2 Sort out properties related to reponsive design by scope
+
+ - Global Layout Properties
+	 - layout -- display:grid / display: flex
+	 - @media: a key element to prove MALALA is responsive
+	 - position and display, container queries and box-sizing
+ - Container level properties
+	 - grid container properties, flex container properties
+	 - general container properties
+ - Elemen level properties
+	 - grid item properties, flex item properties
+	 - general item properties
+ - Content Level properties
+	 - text properties
+	 - image propertie
+	 - unit properties
+	 - relative length unit
+
+<img src="/evaluating-tailwind-css-for-pressbooks/hierarchy.png" alt="Breakpoints" width="500" />
+
+
+Since `@media` operates globally, any styles defined within it apply to the entire page when the specified conditions are met. This makes it a key tool for responsive design, allowing developers to dynamically adjust layouts, typography, and other visual elements based on different viewing environments. For instance, a media query can modify the layout from a multi-column structure on a desktop to a single-column format on a mobile device, ensuring a seamless user experience across devices.
+
+## 3. How we implemented Tailwind CSS in Pressbook Website: Web Version
+
+At first glance, our styling code may resemble Tailwind CSS, but it is fundamentally SCSS. While we follow Tailwind’s conventions and utility-first approach, the code strictly adheres to SCSS syntax and principles, making it an SCSS implementation at its core.
+
+Firstly, the code fully utilizes SCSS features, including variables, mixins, maps, and nesting. These SCSS-specific elements confirm that, despite its Tailwind-like appearance, the code is inherently SCSS.
+
+Secondly, while we adopt Tailwind’s utility-first philosophy—defining small, single-purpose classes such as  `flex`,  `p-4`, and  `rounded-lg`—this is achieved through SCSS mechanisms rather than Tailwind’s standard JavaScript-based configuration. Instead of using JavaScript configuration files, we leverage SCSS maps and loops to generate utility classes dynamically, integrating Tailwind-like structures within an SCSS framework.
+
+In essence, our implementation follows Tailwind’s methodology in terms of class naming and utility-based styling but remains entirely SCSS-driven. This approach allows us to maintain the flexibility and organization of SCSS while achieving the structured, scalable, and maintainable styling approach inspired by Tailwind.
+
+In a word, **Our code “mimics” tailwind css under the rules of SCSS.**
+
+There are three part of code in our “tailwind CSS” code:
+
+ - First part: “renamed” SCSS variables.
+```scss
+$justify-self-values: (
+auto: auto,
+start: start,
+end: end,
+center: center,
+stretch: stretch,
+);
+
+$text-align-values: (
+'left': left,
+'center': center,
+'right': right,
+'justify': justify,
+'start': start,
+'end': end,
+);
+
+$flex-direction-values: (
+'row': row,
+'row-reverse': row-reverse,
+'col': column,
+'col-reverse': column-reverse,
+);
+```
+ - Second part:  core mixin functions responsible for automatically generating CSS classes.
+```scss
+@mixin  generate-utilities($property-prefix, $property, $values) {
+	@each  $name, $value  in  $values {
+		.#{$property-prefix}-#{$name} {
+			@each  $prop  in  $property {
+				#{$prop}: $value;
+			}
+		}
+		.#{$property-prefix}-#{$name}#{$important-suffix} {
+			@each  $prop  in  $property {
+				#{$prop}: $value  !important;
+				}
+		}
+		@each  $breakpoint-key, $breakpoint-value  in  $breakpoints {
+			.#{$breakpoint-key}\\:#{$property-prefix}-#{$name} {
+				@media (min-width: $breakpoint-value) {
+					@each $prop in $property {
+						#{$prop}: $value;
+					}
+				}
+			}
+		}
+	}
+}
+```
+ - Third part: calls to the mixin functions defined above
+```scss
+@include  generate-utilities('display', 'display', $display-values);
+@include  generate-utilities('justify', 'justify-content', $justify-content-values);
+@include  generate-utilities('justify-self', 'justify-self', $justify-self-values);
+@include  generate-utilities('align-self', 'align-self', $align-items-values);
+@include  generate-utilities('grid-cols', 'grid-template-columns', $grid-cols-values);
+@include  generate-utilities('align', 'align-items', $align-items-values);
+```
+
+
+## 4. Responsive Design on Web Version of Pressbook books
+
+To verify that MALALA incorporates responsive design, two key approaches can be used.
+
+First, examining the source code provides direct insight into the implementation. By inspecting the  `book.css`  file through developer tools, it is possible to identify media queries and other responsive design techniques that adapt styles based on screen size and device characteristics. The presence of such CSS rules confirms that the design dynamically adjusts to different viewing conditions.
+
+Second, practical testing on multiple devices ensures that the responsive design functions as intended. By accessing MALALA on different screen sizes—such as desktops, tablets, and mobile phones—it is possible to observe whether the layout, typography, and other UI elements adjust appropriately. This real-world validation complements the code inspection, providing tangible proof of responsive behavior.
+
+By combining these two methods—code analysis and cross-device testing—it is confirmed that MALALA is embedded with responsive design.
+![Source Code 1](/evaluating-tailwind-css-for-pressbooks/source-code-1.png)
+![Source Code 2](/evaluating-tailwind-css-for-pressbooks/source-code-2.png)
+![Source Code 3](/evaluating-tailwind-css-for-pressbooks/source-code-3.png)
+![Source Code 4](/evaluating-tailwind-css-for-pressbooks/source-code-4.png)
+By examining the source code of the page, we can see that  `book.css`  contains multiple  `@media screen`  statements, which define rules specifically applied to  `.page`  and  `#content`. Additionally, by inspecting the textbook using developer tools, it is evident that the elements with  `id="page"`  and  `id="content"`  are applied to the entire page. Therefore, the  `@media screen`  rules in  `book.css`  ensure that responsive design is implemented across the page.
+
+Furthermore, based on my observations, I believe that  `books.css`  (which appears as one of the source files when inspecting the Pressbook website while opening a physics textbook in developer tools) is not the source code for MALALA. Instead, MALALA’s styles can be found under the "Custom Styles" section. This suggests that  `books.css`  is a fundamental stylesheet applied to all eBooks accessed through the Pressbook platform, rather than a file specifically designed for MALALA.
+
+Since media queries are global layout properties, `book.css` applies responsive design rules across the entire page, affecting elements like `.page` and `#content` without requiring inline responsive code. As a result, Pressbook website inherently implements embedded responsive design through these predefined media query rules.
+
+## 5. Pdf Version
+
+Here's some screenshots of how the book looks like when we copy and paste our "Tailwind CSS" code into pdf version of "custom styles" in Pressbook website and export the book as pdf.
+![Tailwind Broken 1](/evaluating-tailwind-css-for-pressbooks/tailwind-1.png)
+![Tailwind Broken 2](/evaluating-tailwind-css-for-pressbooks/tailwind-2.png)
+As you can see, most "Tailwind CSS" stylings are broken and not showing as expected in pdf.
+
+What could be the reason?
+
+One possible reason for this issue is that the PDF export process in Pressbooks relies on  **Prince XML**, which has limitations when processing certain SCSS features. Specifically,  **@mixins**, which are used to define and generate Tailwind-style utility classes in SCSS, cannot be correctly interpreted by Prince XML.
+
+![Prince XML](/evaluating-tailwind-css-for-pressbooks/princexml.png)
+```scss
+@mixin  generate-utilities($property-prefix, $property, $values) {
+	@each  $name, $value  in  $values {
+		.#{$property-prefix}-#{$name} {
+			@each  $prop  in  $property {
+				#{$prop}: $value;
+			}
+		}
+		.#{$property-prefix}-#{$name}#{$important-suffix} {
+			@each  $prop  in  $property {
+				#{$prop}: $value  !important;
+				}
+		}
+		@each  $breakpoint-key, $breakpoint-value  in  $breakpoints {
+			.#{$breakpoint-key}\\:#{$property-prefix}-#{$name} {
+				@media (min-width: $breakpoint-value) {
+					@each $prop in $property {
+						#{$prop}: $value;
+					}
+				}
+			}
+		}
+	}
+}
+```
+There are several contributing factors to this incompatibility. First, the  **complexity of the generated CSS selectors**  may exceed Prince XML’s parsing capabilities, leading to styles being ignored or misinterpreted. Second, the  **excessive number of CSS rules**  created by SCSS mixins can increase processing overhead, making it difficult for the PDF rendering engine to handle them effectively. Additionally,  **escape character issues**  may arise, where syntax such as  `\\:`used in class names is not correctly processed during conversion.
+
+As a result, when exporting the book to PDF, styles written following Tailwind’s utility-based approach through SCSS mixins fail to render correctly. This explains why many of the expected stylings appear broken or missing in the final PDF output.
+
+## 6. Another way to get what we want: component-based SCSS+inline CSS
+
+To address the issue of Tailwind-based SCSS styles not rendering correctly in the PDF version, an alternative approach involves combining  **component-based styling**  with  **inline styles**. This method allows for precise adjustments while maintaining structured styling.
+
+One example of this approach can be seen in the application of both class-based and inline styling to a table element. The  `class="grid aligncenter"`  attribute ensures layout consistency, while the inline  `style="color:red"`  declaration directly specifies the text color. This hybrid approach provides flexibility, ensuring that critical styling elements are preserved regardless of the rendering environment.
+
+A comparison between the web and PDF versions of the same table reveals differences in how styles are applied. In the web version, Tailwind-based SCSS styles are fully rendered, ensuring that table headers and text colors appear as intended. However, in the PDF version, some styles—particularly those relying on complex SCSS mixins—do not render correctly. Despite this, inline styles such as text color adjustments remain functional in both versions.
+
+By incorporating inline styles alongside component-based class structures, it becomes possible to retain essential design elements across different rendering formats. This approach ensures greater compatibility when exporting content to PDF while still leveraging structured styling principles.
+
+⚠️**This research has a time limit, it’s still worth-trying to try other elements out with wrapped classes and inline css.**
+
+## Conclusion
+
+The web version of the textbook  **automatically embeds responsive design**, meaning that achieving responsiveness does not necessarily require the use of Tailwind CSS. However, in the PDF version, Tailwind CSS  **fails to render correctly**, and the root cause has been identified as  **Prince XML’s limitations in processing SCSS mixins**, leading to broken styles.
+
+While Tailwind CSS remains a valuable tool for students, its incompatibility with the PDF export process raises concerns about its practicality in Pressbooks. An alternative approach, combining  **component-based styling with inline styles**, offers a potential workaround but may compromise the full benefits of Tailwind’s utility-first methodology. Given these constraints, the use of Tailwind CSS in Pressbooks should be reconsidered, especially for projects requiring seamless PDF exports.
+
