@@ -1,7 +1,8 @@
 import Link from 'next/link'
 import { buttonVariants } from './ui/button'
-import { HeartIcon } from 'lucide-react'
+import { Contact, Group, GroupIcon, HeartIcon } from 'lucide-react'
 import { Icons } from './icons'
+import { FaPeopleCarry } from 'react-icons/fa'
 
 export function Footer() {
   return (
@@ -29,11 +30,15 @@ export function FooterButtons() {
     <>
       <Link href="/about" className={buttonVariants({ variant: 'outline', size: 'sm' })}>
         <HeartIcon className="h-4 w-4 mr-2 text-red-600 fill-current" />
-        About us
+        About
       </Link>
       <Link href="/contact" className={buttonVariants({ variant: 'outline', size: 'sm' })}>
-        <HeartIcon className="h-4 w-4 mr-2 text-red-600 fill-current" />
-        Contact us
+        <Contact className="h-4 w-4 mr-2 fill-current" />
+        Contact
+      </Link>
+      <Link href="/contact" className={buttonVariants({ variant: 'outline', size: 'sm' })}>
+        <FaPeopleCarry className="h-4 w-4 mr-2 fill-current" />
+        The Team
       </Link>
       <Link
         href="https://github.com/Centennial-College-OER-Lab/student-site"
