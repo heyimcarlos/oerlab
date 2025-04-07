@@ -1,10 +1,12 @@
 import Link from 'next/link'
-import { BookOpen, Code, FileText, GraduationCap, Users } from 'lucide-react'
+import { BookOpen, Code, FileText, GraduationCap, Mail, MapPin, Users } from 'lucide-react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { labMembers } from '@/lib/lab-members'
 import { Badge } from '@/components/ui/badge'
 import { Icons } from '@/components/icons'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { Button } from '@/components/ui/button'
+import Image from 'next/image'
 
 export default function AboutPage() {
   return (
@@ -45,7 +47,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="mb-20">
+      <section className="mb-16">
         <div className="mt-8 grid gap-4 sm:grid-cols-2">
           <Card>
             <CardHeader className="pb-2">
@@ -103,7 +105,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our Mission Section */}
-      <section className="mb-20">
+      <section className="mb-16">
         <div className="text-center">
           <h2 className="text-3xl font-bold tracking-tight">Our Mission</h2>
           <p className="mt-4 max-w-2xl mx-auto text-muted-foreground">
@@ -156,7 +158,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section>
+      <section className="mb-16">
         <div className="text-center">
           <h2 className="text-3xl font-bold tracking-tight">Our Team</h2>
           <p className="mt-4 text-muted-foreground">
@@ -209,6 +211,48 @@ export default function AboutPage() {
               </CardContent>
             </Card>
           ))}
+        </div>
+      </section>
+
+      <section>
+        <div className="rounded-xl border bg-card p-8 shadow-sm">
+          <div className="grid gap-8 md:grid-cols-2">
+            <div>
+              <h2 className="text-3xl font-bold tracking-tight">Get Involved</h2>
+              <p className="mt-4 text-muted-foreground">
+                Interested in joining the OER Lab or collaborating on a project? We&apos;re always looking for
+                passionate students to join our team.
+              </p>
+              <div className="mt-8 space-y-4">
+                <div className="flex items-center">
+                  <Mail className="mr-3 h-5 w-5 text-muted-foreground" />
+                  <p>centennialoerlab@gmail.com</p>
+                </div>
+                {/* <div className="flex items-center">
+                  <MapPin className="mr-3 h-5 w-5 text-muted-foreground" />
+                  <p>Innovation Hub, Building A, Room A204</p>
+                </div> */}
+                <div className="flex items-center">
+                  <GraduationCap className="mr-3 h-5 w-5 text-muted-foreground" />
+                  <p>Open Hours: Monday-Friday, 9:00 AM - 4:00 PM</p>
+                </div>
+              </div>
+              <div className="mt-8 flex gap-4">
+                <Button asChild>
+                  <Link href="mailto:centennialoerlab@gmail.com">Email Us</Link>
+                </Button>
+                <Button variant="outline" asChild>
+                  <Link href="/join">
+                    <Users className="mr-2 h-4 w-4" />
+                    Join Our Team
+                  </Link>
+                </Button>
+              </div>
+            </div>
+            <div className="relative aspect-video overflow-hidden rounded-xl">
+              <Image src="/progress-campus-exterior.jpg" alt="Progress Campus Exterior" fill className="object-cover" />
+            </div>
+          </div>
         </div>
       </section>
     </div>
