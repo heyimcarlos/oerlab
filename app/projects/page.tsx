@@ -13,7 +13,7 @@ export default async function ProjectsIndexPage() {
     (a, b) => stringToDate(b.date).getTime() - stringToDate(a.date).getTime()
   )
   return (
-    <div className="w-full mx-auto flex flex-col gap-1 max-w-screen-sm sm:min-h-[91vh] min-h-[88vh] pt-2">
+    <div className="w-full mx-auto flex flex-col gap-1 sm:min-h-[91vh] min-h-[88vh] pt-2">
       <div className="mb-7 flex flex-col gap-2">
         {projects.length > 0 ? (
           <>
@@ -24,7 +24,7 @@ export default async function ProjectsIndexPage() {
           <h1 className="text-3xl font-extrabold">No projects found...</h1>
         )}
       </div>
-      <div className="grid grid-cols-1 sm:gap-8 gap-4 mb-5">
+      <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 sm:gap-8 gap-4 mb-5">
         {projects.map((project) => (
           <ProjectCard {...project} slug={project.slug} key={project.slug} />
         ))}
@@ -47,13 +47,12 @@ function ProjectCard({ date, title, description, slug, cover }: ProjectsMdxFront
           width={400}
           height={300}
           quality={100}
-          className="w-full rounded-md object-cover h-[300px] border"
+          className="w-full rounded-md object-cover h-[180px] border"
         />
       </div>
       <p className="text-sm text-muted-foreground">{description}</p>
       <div className="flex items-center justify-between w-full mt-auto">
-        <p className="text-[13px] text-muted-foreground">Published on {formatDate2(date)}</p>
-        {/* <AvatarGroup users={authors} /> */}
+        <p className="text-[13px] text-muted-foreground">Last updated on {formatDate2(date)}</p>
       </div>
     </Link>
   )
