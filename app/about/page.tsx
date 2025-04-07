@@ -195,12 +195,12 @@ export default function AboutPage() {
                 <div className="w-full space-x-2 text-center">
                   <div className="mt-3 flex justify-center items-center gap-2">
                     {member.linkedIn && (
-                      <Link href={member.linkedIn}>
+                      <Link href={member.linkedIn} target="_blank" rel="noopener noreferrer">
                         <Icons.linkedIn className="w-10 h-10 text-gray-400" />
                       </Link>
                     )}
                     {member.github && (
-                      <Link href={member.github}>
+                      <Link href={member.github} target="_blank" rel="noopener noreferrer">
                         <Icons.gitHub className="w-8 h-8" />
                       </Link>
                     )}
