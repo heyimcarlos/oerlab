@@ -1,5 +1,6 @@
+import { type Metadata } from 'next'
 import Link from 'next/link'
-import { BookOpen, Code, FileText, GraduationCap, Mail, MapPin, Users } from 'lucide-react'
+import { BookOpen, Code, FileText, GraduationCap, Mail, Users } from 'lucide-react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { labMembers } from '@/lib/lab-members'
 import { Badge } from '@/components/ui/badge'
@@ -7,6 +8,10 @@ import { Icons } from '@/components/icons'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
+
+export const metadata: Metadata = {
+  title: 'Centennial OER Lab - About Us',
+}
 
 export default function AboutPage() {
   return (
