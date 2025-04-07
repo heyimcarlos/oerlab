@@ -12,7 +12,7 @@ export const labMembers: LabMember[] = [
   {
     name: 'Gichul Jaun',
     role: 'Student Developer',
-    bio: 'Software Engineering Technology - AI',
+    bio: 'An experienced web developer who is a goal-driven team player who thrives on collaboration, problem-solving, and tackling challenges.',
     program: 'Software Engineering Technology - AI',
     website: 'https://gichul-j.com/',
     image: '/team/gichuljaun.jpg',
@@ -23,7 +23,7 @@ export const labMembers: LabMember[] = [
     name: 'Leslie Cui',
     role: 'Student Developer',
     program: 'Software Engineering Technology',
-    bio: 'Software Engineering Technology',
+    bio: 'After studying law, I transitioned into computer science. I enjoy collaborating and am highly self-driven when it comes to solving problems.',
     image: '/team/leslie.JPG',
     website: 'https://leslie-gitt.github.io',
     linkedIn: 'www.linkedin.com/in/leslie-lc',
