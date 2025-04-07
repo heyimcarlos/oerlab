@@ -2,7 +2,7 @@ export const labMembers: LabMember[] = [
   {
     name: 'Carlos De La Cruz',
     role: 'Lead Developer & Coordinator',
-    bio: 'Ex competitive gamer turned software engineer. I utilize web technologies to solve complex problems and enjoy activities like snowboarding and BJJ.',
+    bio: 'Ex-competitive gamer turned software engineer. I love to solve complex problems and outdoor activities like snowboarding and surfing.',
     program: 'Software Engineering Technology - AI',
     image: '/team/carlosdelacruz.png',
     website: 'https://heyimcarlos.dev',
@@ -14,9 +14,10 @@ export const labMembers: LabMember[] = [
     role: 'Student Developer',
     bio: 'Software Engineering Technology - AI',
     program: 'Software Engineering Technology - AI',
+    website: 'https://gichul-j.com/',
     image: '/team/gichuljaun.jpg',
     linkedIn: 'https://www.linkedin.com/in/gichuljaun/',
-    website: 'https://gichul-j.com/',
+    github: 'https://github.com/gichul0317',
   },
   {
     name: 'Leslie Cui',
@@ -24,8 +25,9 @@ export const labMembers: LabMember[] = [
     program: 'Software Engineering Technology',
     bio: 'Software Engineering Technology',
     image: '/team/leslie.JPG',
-    linkedIn: 'www.linkedin.com/in/leslie-lc',
     website: 'https://leslie-gitt.github.io',
+    linkedIn: 'www.linkedin.com/in/leslie-lc',
+    github: 'https://github.com/Leslie-gitt',
   },
   {
     name: 'Naomi Lopez Mendoza',
@@ -33,8 +35,9 @@ export const labMembers: LabMember[] = [
     bio: 'Game Programming',
     program: 'Game Programming',
     image: '/team/naomi.jpg',
-    linkedIn: 'https://www.linkedin.com/in/nmendo16/',
     website: 'https://naomilopez19.wixsite.com/naomisportfolio',
+    linkedIn: 'https://www.linkedin.com/in/nmendo16/',
+    github: 'https://github.com/nmendo16',
   },
 ]
 
