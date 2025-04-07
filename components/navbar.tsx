@@ -19,8 +19,8 @@ export const NAVLINKS = [
     href: '/blog',
   },
   {
-    title: 'Team', // 👈 新增这一项
-    href: '/team',
+    title: 'Projects',
+    href: '/projects',
   },
 ]
 

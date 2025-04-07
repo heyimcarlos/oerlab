@@ -1,32 +1,24 @@
 import Link from 'next/link'
 import { buttonVariants } from './ui/button'
-import { CommandIcon, HeartIcon, TriangleIcon } from 'lucide-react'
+import { HeartIcon } from 'lucide-react'
+import { Icons } from './icons'
 
 export function Footer() {
   return (
-    <footer className="border-t w-full h-16">
+    <footer className="border-t w-full h-20">
       <div className="container flex items-center sm:justify-between justify-center sm:gap-0 gap-4 h-full text-muted-foreground text-sm flex-wrap sm:py-0 py-3 max-sm:px-4">
         <div className="flex items-center gap-3">
-          <CommandIcon className="sm:block hidden w-5 h-5 text-muted-foreground" />
           <p className="text-center">
-            Build by{' '}
-            <Link className="underline underline-offset-2" href="https://github.com/heyimcarlos">
-              Carlos
-            </Link>{' '}
-            (for now). The source code is available on{' '}
-            <Link
-              className="underline underline-offset-2"
-              href="https://github.com/Centennial-College-OER-Lab/student-site"
-            >
-              GitHub
+            Brought to you by the{' '}
+            <Link className="underline underline-offset-2" href="https://github.com/centennial-college-oer-lab">
+              Centennial College OER Lab
             </Link>
             .
           </p>
         </div>
-
-        {/* <div className="gap-4 items-center hidden md:flex">
+        <div className="gap-4 items-center hidden md:flex">
           <FooterButtons />
-        </div> */}
+        </div>
       </div>
     </footer>
   )
@@ -35,19 +27,16 @@ export function Footer() {
 export function FooterButtons() {
   return (
     <>
-      <Link
-        href="https://vercel.com/templates/next.js/documentation-template"
-        className={buttonVariants({ variant: 'outline', size: 'sm' })}
-      >
-        <TriangleIcon className="h-[0.8rem] w-4 mr-2 text-primary fill-current" />
-        Deploy
+      <Link href="/about" className={buttonVariants({ variant: 'outline', size: 'sm' })}>
+        <HeartIcon className="h-4 w-4 mr-2 text-red-600 fill-current" />
+        About us
       </Link>
       <Link
         href="https://github.com/Centennial-College-OER-Lab/student-site"
         className={buttonVariants({ variant: 'outline', size: 'sm' })}
       >
-        <HeartIcon className="h-4 w-4 mr-2 text-red-600 fill-current" />
-        Sponsor
+        <Icons.gitHub className="h-[0.8rem] w-4 mr-2 text-primary fill-current" />
+        Source
       </Link>
     </>
   )
