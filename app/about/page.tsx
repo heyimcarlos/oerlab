@@ -246,12 +246,12 @@ export default function AboutPage() {
                 <Button asChild>
                   <Link href="mailto:centennialoerlab@gmail.com">Email Us</Link>
                 </Button>
-                <Button variant="outline" asChild>
+                {/* <Button variant="outline" asChild>
                   <Link href="/join">
                     <Users className="mr-2 h-4 w-4" />
                     Join Our Team
                   </Link>
-                </Button>
+                </Button> */}
               </div>
             </div>
             <div className="relative aspect-video overflow-hidden rounded-xl">
