@@ -19,6 +19,7 @@ import { Stepper, StepperItem } from '@/components/markdown/stepper'
 import Image from '@/components/markdown/image'
 import Link from '@/components/markdown/link'
 import Outlet from '@/components/markdown/outlet'
+import UnityEmbed from '@/components/unity-embedder'
 
 // add custom components
 const components = {
@@ -33,6 +34,7 @@ const components = {
   img: Image,
   a: Link,
   Outlet,
+  UnityEmbed,
 }
 
 // can be used for other pages like blogs, Guides etc
