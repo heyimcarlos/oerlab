@@ -18,7 +18,7 @@ export default function UnityEmbed(props: Props) {
     return () => {
       document.body.removeChild(script)
     }
-  }, [])
+  }, [props.buildName, props.buildPath])
 
   return (
     <div className="relative w-full h-[550px] dark:bg-black bg-white">
