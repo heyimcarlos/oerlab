@@ -1,13 +1,13 @@
 ---
-title: 'Look And Feel Guide: A Reference for Styled Components'
-description: 'The practical guide focuses on building and using reusable CSS components and demonstrates how to maintain a consistent and cohesive look and feel throughout Pressbooks project.'
+title: "Look And Feel Guide: A Reference for Styled Components"
+description: "The practical guide focuses on building and using reusable CSS components and demonstrates how to maintain a consistent and cohesive look and feel throughout Pressbooks project."
 date: 10-04-2025
 authors:
-  - avatar: '/team/gichuljaun.jpg'
+  - avatar: "/team/gichuljaun.jpg"
     handle: gichul0317
     username: Gichul Jaun
-    handleUrl: 'https://github.com/gichul0317'
-cover: '/look-and-feel-guide/cover.jpg'
+    handleUrl: "https://github.com/gichul0317"
+cover: "/look-and-feel-guide/cover.jpg"
 archived: false
 tags: [pressbooks, oer, onboarding, developers, student]
 ---
@@ -38,107 +38,167 @@ The core visual guidelines ensure that every component to follows a unified desi
 
 ### Typorgraphy
 
-- The Malala theme in Pressbooks applies many CSS styles by default—including base typography, spacing, and component structure.
-- Default settings in front-matter
-  - Heading1 (h1)
-    ```
-    font-family: "Encode Sans", sans-serif;
-    font-size: 2em;
-    line-height: 1.2em;
-    font-weight: bold;
-    text-align: left;
-    margin-bottom: 1em;
-    ```
-  - Heading2 (h2)
-    ```
-    font-family: "Raleway", sans-serif;
-    font-size: 1.5em;
-    line-height: 1.2em;
-    font-weight: 500;
-    text-align: left;
-    margin-top: 1.25em;
-    margin-bottom: 1em;
-    ```
-  - Heading3 (h3)
-    ```
-    font-family: "Raleway", sans-serif;
-    font-size: 1.333em;
-    line-height: 1.2em;
-    font-weight: normal;
-    text-align: left;
-    margin-top: 1.25em;
-    margin-bottom: 1em;
-    ```
-  - Body Text (p)
-    ```
-    font-family: "Encode Sans", sans-serif;
-    font-size: 1em;
-    line-height: 1.5;
-    font-weight: normal;
-    margin-top: 1em;
-    margin-bottom: 0.5em;
-    ```
-  - Captions (figcaption)
-    ```
-    font-family: "Encode Sans", sans-serif;
-    font-size: 1em;
-    line-height: 1.5em;
-    font-weight: normal;
-    margin: 0;
-    ```
-- Default settings in chapters
+The Malala theme in Pressbooks applies several default typography styles, including font family, size, and line height.
 
-  - Heading1 (h1)
-    ```
-    font-family: "Raleway", sans-serif;
-    font-size: 1.667em;
-    line-height: 1.2em;
-    font-weight: 600;
-    margin-top: 1.25em;
-    margin-bottom: 1em;
-    ```
-  - Heading2 (h2)
+#### Default settings in front-matter
 
-    ```
-    font-family: "Raleway", sans-serif;
-    font-size: 1.5em;
-    line-height: 1.2em;
-    font-weight: 500;
-    margin-top: 1.25em;
-    margin-bottom: 1em;
-    ```
+- Heading 1 (`<h1>`)
+  ```
+  font-family: "Encode Sans", sans-serif;
+  font-size: 2em;
+  line-height: 1.2em;
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 1em;
+  ```
+- Heading 2 (`<h2>`)
+  ```
+  font-family: "Raleway", sans-serif;
+  font-size: 1.5em;
+  line-height: 1.2em;
+  font-weight: 500;
+  text-align: left;
+  margin-top: 1.25em;
+  margin-bottom: 1em;
+  ```
+- Heading 3 (`<h3>`)
+  ```
+  font-family: "Raleway", sans-serif;
+  font-size: 1.333em;
+  line-height: 1.2em;
+  font-weight: normal;
+  text-align: left;
+  margin-top: 1.25em;
+  margin-bottom: 1em;
+  ```
+- Body Text (`<p>`)
+  ```
+  font-family: "Encode Sans", sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  font-weight: normal;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  ```
+- Captions (`<figcaption>`)
+  ```
+  font-family: "Encode Sans", sans-serif;
+  font-size: 1em;
+  line-height: 1.5em;
+  font-weight: normal;
+  margin: 0;
+  ```
 
-  - Heading3 (h3)
-    ```
-    font-family: "Raleway", sans-serif;
-    fon-size: 1.333em;
-    line-height: 1.2em;
-    font-weight: normal;
-    margin-top: 1.25em;
-    margin-botton: 1em;
-    ```
-  - Body Text (p)
+#### Default settings in chapters
 
-    ```
-    font-family: "Encode Sans", sans-serif;
-    font-size: 1em;
-    line-height: 1.5;
-    font-weight: normal;
-    margin-top: 0;
-    margin-bottom: 0;
-    ```
+- Heading 1 (`<h1>`)
+  ```
+  font-family: "Raleway", sans-serif;
+  font-size: 1.667em;
+  line-height: 1.2em;
+  font-weight: 600;
+  margin-top: 1.25em;
+  margin-bottom: 1em;
+  ```
+- Heading 2 (`<h2>`)
 
-  - Captions (figcaption)
-    ```
-    font-family: "Encode Sans", sans-serif;
-    font-size: 1em;
-    line-height: 1.5em;
-    font-weight: normal;
-    margin: 0;
-    ```
+  ```
+  font-family: "Raleway", sans-serif;
+  font-size: 1.5em;
+  line-height: 1.2em;
+  font-weight: 500;
+  margin-top: 1.25em;
+  margin-bottom: 1em;
+  ```
 
-- Layout & Spacing
-  - Theme default layout and spacings
+- Heading 3 (`<h3>`)
+  ```
+  font-family: "Raleway", sans-serif;
+  fon-size: 1.333em;
+  line-height: 1.2em;
+  font-weight: normal;
+  margin-top: 1.25em;
+  margin-botton: 1em;
+  ```
+- Body Text (`<p>`)
+
+  ```
+  font-family: "Encode Sans", sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  font-weight: normal;
+  margin-top: 0;
+  margin-bottom: 0;
+  ```
+
+- Captions (`<figcaption>`)
+  ```
+  font-family: "Encode Sans", sans-serif;
+  font-size: 1em;
+  line-height: 1.5em;
+  font-weight: normal;
+  margin: 0;
+  ```
+
+### Layout & Spacing
+
+The Malala theme in Pressbooks also provides default layout and spacing for components such as textboxes for learning-objectives, exercises, and examples. These defaults include padding, margins, and structural alignment that ensure consistent spacing between elements. The following code snippets highlight some of the default CSS classes and properties provided by the Malala theme.
+
+```
+.textbox, .bcc-box {
+  padding: 2.5em 2.5em 2.5em 2.5em;
+  margin: 0.9em 0 0.9em 0;
+  border-style: solid;
+  border-width: 0.05em;
+  border-radius: 0;
+}
+```
+
+```
+.textbox.learning-objectives, .bcc-box.learning-objectives,
+.textbox.key-takeaways, .bcc-box.key-takeaways,
+.textbox.exercises, .bcc-box.exercises,
+.textbox.examples, .bcc-box.examples {
+  padding: 1.7777777778em 1.7777777778em 1.7777777778em 1.7777777778em;
+  margin-bottom: 1.35em;
+  margin-left: 0;
+  margin-right: 0;
+  border-radius: 0;
+  border-style: none;
+  border-width: 0;
+}
+```
+
+```
+.front-matter table.aligncenter, .part table.aligncenter,
+.chapter table.aligncenter, .back-matter table.aligncenter,
+body#tinymce.wp-editor table.aligncenter {
+  margin-left: auto;
+  margin-right: auto;
+}
+```
+
+```
+.front-matter table.grid, .front-matter table.grid tbody,
+.front-matter table.grid th, .front-matter table.grid tr,
+.front-matter table.grid td, .front-matter table.grid tfoot,
+.front-matter table.grid thead, .part table.grid,
+.part table.grid tbody, .part table.grid th, .part table.grid tr,
+.part table.grid td, .part table.grid tfoot, .part table.grid thead,
+.chapter table.grid, .chapter table.grid tbody, .chapter table.grid th,
+.chapter table.grid tr, .chapter table.grid td, .chapter table.grid tfoot,
+.chapter table.grid thead, .back-matter table.grid, .back-matter table.grid tbody,
+.back-matter table.grid th, .back-matter table.grid tr, .back-matter table.grid td,
+.back-matter table.grid tfoot, .back-matter table.grid thead, body#tinymce.wp-editor table.grid,
+body#tinymce.wp-editor table.grid tbody, body#tinymce.wp-editor
+table.grid th, body#tinymce.wp-editor table.grid tr, body#tinymce.wp-editor
+table.grid td, body#tinymce.wp-editor table.grid tfoot, body#tinymce.wp-editor table.grid thead {
+  border: 1px solid;
+  border-color: black;
+}
+```
+
+**\*Note:** We are leveraging the default CSS classes provided by the Malala theme to establish a cohesive baseline design, while layering on custom CSS styles to apply our own visual enhancements.
 
 ## Styled Components
 
@@ -150,30 +210,24 @@ This section highlights the custom-built CSS styled components used throughout o
 
 The Learning Objectives textbox is a styled component designed to highlight the expected learning outcomes for readers. It is typically placed at the beginning of a Part (rather than individual Chapters) to outline what readers should be able to understand or achieve after completing the entire Part—including all chapters within it.
 
-**\*Note:** In Pressbooks, content is organized hierarchically into Parts and Chapters. Each Part acts as a broader section that contains multiple related Chapters. For example, under Part 1, you might have:
+**\*Note:** In Pressbooks, content is organized hierarchically into Parts and Chapters. Each Part acts as a broader section that contains multiple related Chapters. For example, you might have:
 
-- Chapter 1.1
-- Chapter 1.2
-- Chapter 1.3
+- Part 1
+  - Chapter 1.1
+  - Chapter 1.2
+  - Chapter 1.3
 
 ![learning-objectives textbox](/look-and-feel-guide/learning-objectives.png)
 
 ```
-.textbox .textbox--learning-objectives {
+.textbox.textbox--learning-objectives,
+.bcc-box.learning-objectives {
   background-color: #fff;
   border-radius: 0.5rem;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
   overflow: hidden;
-  padding: 0;
-  margin-top: 0.9em;
-  margin-bottom: 1.35em;
   .textbox__header {
     background-color: #d4df38;
-    padding: 1.7777777778em 1.7777777778em 1.7777777778em 1.7777777778em;
-  }
-  .textbox__content {
-    margin: 0;
-    padding: 1.7777777778em 1.7777777778em 1.7777777778em 1.7777777778em;
   }
 }
 ```
@@ -185,14 +239,11 @@ The Exercises textbox is used to present practice activities or questions within
 ![exercises textbox](/look-and-feel-guide/exercises.png)
 
 ```
-.textbox .textbox--border-left {
+.textbox.textbox--border-left {
   border-radius: 0.5rem;
   border-left-width: 8px;
   border-color: #004c97;
   background-color: #fff;
-  padding: 2.5em 2.5em 2.5em 2.5em;
-  margin-top: 0.9em;
-  margin-bottom: 0.9em;
 }
 ```
 
@@ -203,39 +254,29 @@ The Examples textbox is used to present practical examples within a chapter. To 
 ![examples textbox](/look-and-feel-guide/examples.png)
 
 ```
-.textbox .textbox--border-left .third-option {
-  border-radius: 0.5rem;
-  border-left-width: 8px;
+.textbox.textbox--border-left.third-option {
   border-color: #e81d2e;
-  background-color: #fff;
-  padding: 2.5em 2.5em 2.5em 2.5em;
-  margin-top: 0.9em;
-  margin-bottom: 0.9em;
 }
 ```
 
 ### Challenge Questions
 
-The Challenge Questions textbox is designed to present end-of-chapter activities that push learners to apply what they’ve learned. `.textbox--exercises` class is used, and all of the challenge questions textbox at the end of each chapter should have H5P activity and accordion menu for test version of the question and answer.
+The Challenge Questions textbox is designed to present end-of-chapter activities that push learners to apply what they’ve learned. We used `.textbox--exercises` class, and all of the challenge questions textbox at the end of each chapter should have H5P activity and accordion menu for the "Test Version of the Challenge Question(s)".
 
 ![challenge questions textbox](/look-and-feel-guide/challenge-questions.png)
 
 ```
-.textbox--exercises {
+.textbox.textbox--exercises,
+.bcc-box.textbox--exercises {
   background-color: #fff;
   border-radius: 0.5rem;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
   overflow: hidden;
-  padding: 0;
-  margin-top: 0.9em;
-  margin-bottom: 1.35em;
   .textbox__header {
     background-color: #eae8d7;
-    padding: 1.7777777778em 1.7777777778em 1.7777777778em 1.7777777778em;
-  }
-  .textbox__content {
-    margin: 0;
-    padding: 1.7777777778em 1.7777777778em 1.7777777778em 1.7777777778em;
+    h2 {
+      color: #000;
+    }
   }
 }
 ```
@@ -291,15 +332,16 @@ The Blur Box component is used to present practice questions at the end of each 
   width: fit-content;
   padding: 1rem;
   border-radius: 0.375rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-  .answer-box--answer {
-    cursor: pointer;
-    filter: blur(8px);
-    transition: all cubic-bezier(0.4, 0, 0.2, 1) 300ms;
-    &:hover {
-      filter: blur(0);
-    }
-  }
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    .answer-box--answer {
+      cursor: pointer;
+      filter: blur(8px);
+      transition: all cubic-bezier(0.4, 0, 0.2, 1) 300ms;
+      &:hover {
+        filter: blur(0);
+      }
+   }
 }
 ```
 
@@ -326,7 +368,7 @@ The Equation Textbox is designed to present a mathematical or scientific equatio
 
 ### Accordion
 
-The Accordion Menu is an interactive component used to hide and reveal content on click. It is used for "Text version(s) of the Question and Answers" in the H5P activities and "How to Access the Transcript" in the video component.
+The Accordion Menu is an interactive component used to hide and reveal content on click. It is used for "Text Version of the Challenge Question(s)" in the H5P activities and "How to Access the Transcript" in the video component.
 
 ![accordion menu not opened](/look-and-feel-guide/accordion-1.png)
 
@@ -384,31 +426,17 @@ The Key Takeaways textbox is used to highlight essential points or summary state
 ![key takeaways textbox](/look-and-feel-guide/alternates-key-takeaways.png)
 
 ```
-.textbox--key-takeaways {
+.textbox.textbox--key-takeaways,
+.bcc-box.textbox--key-takeaways {
   border-radius: 0.5rem;
   overflow: hidden;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
-  background: #e8c1A2;
-  color: #000;
-  padding: 0;
-  margin-top: 0.9em;
-  margin-bottom: 1.35em;
-  .textbox__header {
-    background: #c25700;
-    color: #fff;
-    margin: 0;
-    padding: 1.7777777778em 1.7777777778em 1.7777777778em 1.7777777778em;
-  }
-  .textbox__content {
-    margin: 0;
-    padding: 1.7777777778em 1.7777777778em 1.7777777778em 1.7777777778em;
-  }
 }
 ```
 
 #### Alternates 1 and 2
 
-The Alternates 1 and Alternates 2 textboxes are stylistic variations of the Key Takeaways textbox. The only difference is background-colors.
+The Alternates 1 and Alternates 2 textboxes are stylistic variations of the Key Takeaways textbox. However, these components are custom-created and not part of the default Malala theme—unlike the Key Takeaways textbox.
 
 ![alternates 1 textbox](/look-and-feel-guide/alternates-1.png)
 
@@ -513,27 +541,154 @@ These textboxes are used in the [Exercises](#exercises) and [Examples](#examples
 
 ### Table
 
-blah blah
+The Table component is styled to create a bordered and horizontally centered table layout. Text contents in the table headers (`<th>`) are center-aligned and when the content inside table cells begins to shrink too much based on screen size, a horizontal scroll bar automatically appears.
+
+![table component](/look-and-feel-guide/table.png)
+
+```
+.table-wrapper {
+  overflow-x: auto;
+  width: 100%;
+  table {
+    width: 100%;
+    table-layout: auto;
+    th {
+      text-align: center !important;
+    }
+  }
+}
+```
+
+**\*Note:** The Malala theme in Pressbooks provides several built-in CSS classes that influence table appearance by default:
+
+- `table.grid`: Adds a black border around all table cells, using `border: 1px solid` and `border-color: black`.
+- `table.aligncenter`: Centers the table horizontally within the page, using `margin-left: auto` and `margin-right: auto`.
+- For more information on how spacing and structural alignment are handled, please refer to the [Layout & Spacing](#layout--spacing) section
+- Please use these default CSS classes when creating a table, using `<table class=grid aligncenter">`
 
 ### Image and Caption
 
-blah blah
+Images and image captions are implemented using the `<figure>` element, which contains both the `<img>` and the `<figcaption>`. Both the image and its captions are horizontally centered.
+
+![figure component includes image and captions](/look-and-feel-guide/images.png)
+
+```
+figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  figcaption {
+    text-align: center;
+    margin: 0.5rem 0;
+  }
+}
+```
 
 ### Video
 
-blah blah
+The video component is wrapped within a `<div class="video-wrapper">` element that contains both the embedded video and an accordion menu "How to Access the Transcript".
+
+![video component](/look-and-feel-guide/videos.png)
+
+```
+.video-wrapper {
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+  iframe {
+    width: 100%;
+    max-width: 100%;
+    height: auto !important;
+    aspect-ratio: 16 / 9;
+    border: none;
+  }
+}
+```
 
 ### H5P Activities
 
-blah blah
+The H5P Activities component is wrapped within a `<div class="h5p-wrapper">` element that contains both the embedded H5P activity and an accordion menu "Text Version of the Challenge Question(s)".
+
+![h5p component](/look-and-feel-guide/h5p-activities.png)
+
+```
+.h5p-wrapper {
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+}
+```
 
 ### Icons
 
-blah blah
+Icons component is wrapped within a `<div class="icons-wrapper">` element and includes each icon in the grid column. A horizontal scroll bar automatically appears based on screen size.
+
+![icons component](/look-and-feel-guide/icons.png)
+
+```
+.icons-wrapper {
+  overflow-x: auto;
+  .icons {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+    width: max-content;
+    margin: 0 auto;
+    .icons-cell {
+      border: 1px solid #ccc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      box-sizing: border-box;
+    }
+  }
+}
+```
 
 ## How to Create Images and Diagrams
 
-blah blah
+To maintain consistency and quality in visual elements across Pressbooks projects, we recommend using Canva for general image creation and GeoGebra for diagrams and graphs.
+
+### Image Creation in Canva
+
+1. Visit free image sites like [Pixabay](https://pixabay.com/), [Freepik](https://www.freepik.com/), or similar platforms. Search for suitable images and download your selection.
+2. Go to [Canva](https://www.canva.com/) and log in using the Centennial College OER Lab account:
+   - Email: OERLab@centennialcollege.ca
+   - Password: OerLab@Centennial2021!
+3. Click “Create a design” and choose "Custom Size" and enter 700 x 500 px (recommended size)
+4. Click on the “Uploads” tab and upload your previously downloaded image
+5. Adjust, crop, and edit as needed to fit your design goals
+6. Click the “Share” button, then choose “Download”
+7. Navigate to the page in your Pressbooks project where you want to insert the image
+8. Click where you’d like to place the image and choose “Add Media”
+9. Go to “Upload Files”, click “Select Files”, and upload your image
+10. Once uploaded, click “Insert” at the bottom-right of the screen
+
+### Diagram Creation in GeoGebra
+
+1. Visit [GeoGebra](https://www.geogebra.org/) and click "Start Calculator"
+2. Setting up the workspace
+   - Go to setting -> Basic -> Set the x-axis and y-axis ratio to 1:1
+   - Go to setting -> xAxis setting -> Set the distance to 1
+   - Go to setting -> yAxis setting -> Set the distance to 1
+3. Select "Tools" tab on the left side
+4. Select "Vector" tool under "Lines" to draw primary vector
+5. Select "Circular Sector" tool under "Circles" to draw an angle
+6. Select "Segment" under "Lines" to draw a reference line
+7. Select "Text" under "Media" to insert labels. For vector labels, use LaTeX syntax for an overhead arrow (`\overrightarrow{A} for vector A`)
+   - Replace A with your vector's label
+8. Select the line and set the "Line Thickness" to 8
+9. For angles and its labels and lines, set the color to gray. The theta symbol (θ) should be black and bold
+10. Set the reference line color to red and make it dotted line by selecting the line, and choose "Line Style" to dotted line
+11. Set the position vectors color to blue
+12. To hide auto-generated labels (like A, B, C, D), click the label and unselect "Show Object"
+13. Use Serif font for non-LaTeX texts and set text size to medium, and make it bold
+14. Export and cropping
+    - Click "Hamburger" menu at the top left side.
+    - Click "Export Image" and click "Download" button
+    - After download the image, open the image and crop the image to one small square away from the last element for a clean and consistent layout
 
 ## How to Use Look and Feel Guide and Pressbooks Project Template
 
