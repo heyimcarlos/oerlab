@@ -1,44 +1,42 @@
 ---
-title: "Look And Feel Guide: A Reference for Styled Components"
-description: "The practical guide focuses on building and using reusable CSS components and demonstrates how to maintain a consistent and cohesive look and feel throughout Pressbooks project."
-date: 10-04-2025
+title: 'Look And Feel Guide: A Reference for Styled Components'
+description: 'The practical guide focuses on building and using reusable CSS components and demonstrates how to maintain a consistent and cohesive look and feel throughout Pressbooks project.'
+date: 22-04-2025
 authors:
-  - avatar: "/team/gichuljaun.jpg"
+  - avatar: '/team/gichuljaun.jpg'
     handle: gichul0317
     username: Gichul Jaun
-    handleUrl: "https://github.com/gichul0317"
-cover: "/look-and-feel-guide/cover.jpg"
+    handleUrl: 'https://github.com/gichul0317'
+cover: '/look-and-feel-guide/cover.jpg'
 archived: false
 tags: [pressbooks, oer, onboarding, developers, student]
 ---
 
 ## Why a Consistent Look & Feel Matters
 
-A unified and consistent Look and Feel is essential for creating a cohesive and professional digital product. In Pressbooks project, consistent styling across all chapters and components enhances visual appeal and improves user experience. This guide serves as a comprehensive reference for styled components used in our Pressbooks projects. It helps student developers in the OER Lab to maintain visual harmony across the book by outlining key design principles and reusable styled components.
-
-This article establishes the visual standards for our Pressbooks projects by detailing the color palette, typography rules, component styles, and asset guidelines to ensure consistency and cohesion across all content. Technical pressbook settings such as theme options and plugin configurations are covered in the [Getting Started with Pressbooks: A Guide for Student Developers.](/blog/pressbooks-getting-started-student)
+In Pressbooks project, consistent styling across all chapters and components enhances visual appeal and improves user experience and accessibility. This guide serves as a comprehensive reference for styled components used in our Pressbooks projects. It helps student developers in the OER Lab to maintain visual harmony across the book by outlining key design principles and reusable styled components.
 
 ## Our Approach
 
 To ensure a consistent and accessible design across Pressbooks project, this guide is presented in two complmentary parts:
 
-1. **This Blog Post** - This post serves as the rulebook for our design system. It outlines the core principles behind our visual design and sets the standards for typography, color usage, and component styling. You'll find detailed guidance on how to apply these standards, along with the CSS needed to replicate each styled component featured in the Pressbooks Template.
-2. **Pressbooks Template** - Acting as a visual companion to this blog post, a template book displays all styled components in a live Pressbooks environment. It provides a clear, practical view of how each element should look and function. It also serves as the source of the custom CSS, making it easy to copy and implement styles into your own projects.
+1. **This Blog Post** - This post outlines the core principles behind our visual design and sets the standards for typography, color usage, and component styling. You'll find detailed guidance on each CSS styled component in the **Pressbooks Template**.
+2. **Pressbooks Template** - A template displays all styled components in a live Pressbooks environment. It provides a clear, practical view of how each element should look and function. It also serves as the source of the custom CSS, making it easy to copy and implement styles into your own projects.
 
-   **\*Note:** Please do not clone the Pressbooks Template directly. Instead, import only the components and CSS you need. Use both the blog post and reference book together as a guide for proper implementation.
+**\*Note:** Please use both this **Blog Post** and **Pressbooks Template** together for proper implementation.
 
 ## Core Visual Guidelines
 
-The core visual guidelines ensure that every component to follows a unified design that enhances readability, usability, and consistency. This section outlines the core visual elements that form the foundation of our design throughout the Pressbooks project.
+This section outlines the core visual elements that form the foundation of our design throughout the Pressbooks project.
 
 ### Color Palette
 
 - Defines primary, secondary, and accent colors with clear usage guidelines for text, backgrounds, and interactive elements.
-- [Centennial College Brand Identity Standards](https://centennialcollegeedu.sharepoint.com/sites/COLLab/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FCOLLab%2FShared%20Documents%2FGeneral%2Fbrand%2Didentity%2Dstandards%202023%2Epdf&parent=%2Fsites%2FCOLLab%2FShared%20Documents%2FGeneral&p=true&ct=1744642881924&or=Teams%2DHL&ga=1&LOF=1)
+- A link to Centennial College's brand identity standards: [Centennial College Brand Identity Standards](https://centennialcollegeedu.sharepoint.com/sites/COLLab/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FCOLLab%2FShared%20Documents%2FGeneral%2Fbrand%2Didentity%2Dstandards%202023%2Epdf&parent=%2Fsites%2FCOLLab%2FShared%20Documents%2FGeneral&p=true&ct=1744642881924&or=Teams%2DHL&ga=1&LOF=1)
 
 ### Typorgraphy
 
-The Malala theme in Pressbooks applies several default typography styles, including font family, size, and line height.
+The **Malala Theme** in Pressbooks applies several default typography styles, including font family, size, line height, and so on.
 
 #### Default settings in front-matter
 
@@ -142,7 +140,7 @@ The Malala theme in Pressbooks applies several default typography styles, includ
 
 ### Layout & Spacing
 
-The Malala theme in Pressbooks also provides default layout and spacing for components such as textboxes for learning-objectives, exercises, and examples. These defaults include padding, margins, and structural alignment that ensure consistent spacing between elements. The following code snippets highlight some of the default CSS classes and properties provided by the Malala theme.
+The **Malala Theme** in Pressbooks also provides default layout and spacing for components. These default layouts include padding, margins, and structural alignment that ensure consistent spacing between elements.
 
 ```
 .textbox, .bcc-box {
@@ -169,46 +167,17 @@ The Malala theme in Pressbooks also provides default layout and spacing for comp
 }
 ```
 
-```
-.front-matter table.aligncenter, .part table.aligncenter,
-.chapter table.aligncenter, .back-matter table.aligncenter,
-body#tinymce.wp-editor table.aligncenter {
-  margin-left: auto;
-  margin-right: auto;
-}
-```
-
-```
-.front-matter table.grid, .front-matter table.grid tbody,
-.front-matter table.grid th, .front-matter table.grid tr,
-.front-matter table.grid td, .front-matter table.grid tfoot,
-.front-matter table.grid thead, .part table.grid,
-.part table.grid tbody, .part table.grid th, .part table.grid tr,
-.part table.grid td, .part table.grid tfoot, .part table.grid thead,
-.chapter table.grid, .chapter table.grid tbody, .chapter table.grid th,
-.chapter table.grid tr, .chapter table.grid td, .chapter table.grid tfoot,
-.chapter table.grid thead, .back-matter table.grid, .back-matter table.grid tbody,
-.back-matter table.grid th, .back-matter table.grid tr, .back-matter table.grid td,
-.back-matter table.grid tfoot, .back-matter table.grid thead, body#tinymce.wp-editor table.grid,
-body#tinymce.wp-editor table.grid tbody, body#tinymce.wp-editor
-table.grid th, body#tinymce.wp-editor table.grid tr, body#tinymce.wp-editor
-table.grid td, body#tinymce.wp-editor table.grid tfoot, body#tinymce.wp-editor table.grid thead {
-  border: 1px solid;
-  border-color: black;
-}
-```
-
-**\*Note:** We are leveraging the default CSS classes provided by the Malala theme to establish a cohesive baseline design, while layering on custom CSS styles to apply our own visual enhancements.
+**\*Note:** We are using the default CSS classes provided by the **Malala Theme**. Although these defaults provide a solid foundation, we are adding custom CSS styles to introduce visual enhancement and to tailor the apperance to be algined with our project's unique look and feel.
 
 ## Styled Components
 
-This section highlights the custom-built CSS styled components used throughout our Pressbooks projects. Each example shown here is a visual snapshot taken directly from the Reference Pressbooks Book.
+This section highlights custom CSS styled components used throughout our Pressbooks projects. Each example shown here is a visual snapshot taken directly from the **Pressbooks Template**.
 
-**\*Note:** The appearance you see is not default—it is achieved by applying the Custom CSS provided in the reference book.
+**\*Note:** The appearance you see is not a default — it is achieved by applying the Custom CSS provided in the **Pressbooks Template**.
 
 ### Learning Objectives
 
-The Learning Objectives textbox is a styled component designed to highlight the expected learning outcomes for readers. It is typically placed at the beginning of a Part (rather than individual Chapters) to outline what readers should be able to understand or achieve after completing the entire Part—including all chapters within it.
+The Learning Objectives textbox is a styled component designed to highlight the expected learning outcomes for readers. It is typically placed at the beginning of a part.
 
 **\*Note:** In Pressbooks, content is organized hierarchically into Parts and Chapters. Each Part acts as a broader section that contains multiple related Chapters. For example, you might have:
 
@@ -234,7 +203,7 @@ The Learning Objectives textbox is a styled component designed to highlight the 
 
 ### Exercises
 
-The Exercises textbox is used to present practice activities or questions within a chapter. To maintain a cohesive and clean design, we use the `.textbox--border-left` class. However, `textbox--exercises` class is also available by default, and this class has a similar look of the learning objectives textbox which has a colored header and a content field.
+The Exercises textbox is used to present practice activities or questions within a chapter. To achieve a clean design, we use the `.textbox--border-left` class here.
 
 ![exercises textbox](/look-and-feel-guide/exercises.png)
 
@@ -249,7 +218,7 @@ The Exercises textbox is used to present practice activities or questions within
 
 ### Examples
 
-The Examples textbox is used to present practical examples within a chapter. To maintain a cohesive and clean design, we use the `.textbox--border-left third-option` class. However, `textbox--examples` class is also available by default, and this class has a similar look of the learning objectives textbox which has a colored header and a content field.
+The Examples textbox is used to present practical examples within a chapter. To achieve a clean design, we use the `.textbox--border-left third-option` class here.
 
 ![examples textbox](/look-and-feel-guide/examples.png)
 
@@ -261,7 +230,9 @@ The Examples textbox is used to present practical examples within a chapter. To 
 
 ### Challenge Questions
 
-The Challenge Questions textbox is designed to present end-of-chapter activities that push learners to apply what they’ve learned. We used `.textbox--exercises` class, and all of the challenge questions textbox at the end of each chapter should have H5P activity and accordion menu for the "Test Version of the Challenge Question(s)".
+The Challenge Questions textbox is designed to present end-of-chapter activities that push learners to apply what they’ve learned. We used `.textbox--exercises` class here.
+
+**\*Note:** All of the challenge questions textbox should have H5P activity and accordion menu for the "Text Version of the Challenge Question(s)"
 
 ![challenge questions textbox](/look-and-feel-guide/challenge-questions.png)
 
@@ -283,7 +254,7 @@ The Challenge Questions textbox is designed to present end-of-chapter activities
 
 ### Textbox
 
-The General Textbox is used to highlight supplementary or important content that should be visually separated from the main body text. We’ve created three types of textboxes for consistent content highlighting. Each textbox shares the same structural styling—such as padding, border-radius, and typography—but differs only in background color to visually distinguish its purpose.
+The general Textbox is used to highlight supplementary or important content that should be visually separated from the main body text. We’ve created three types of textboxes (differs only in background colors).
 
 ![general textbox](/look-and-feel-guide/textbox-1.png)
 
@@ -436,7 +407,7 @@ The Key Takeaways textbox is used to highlight essential points or summary state
 
 #### Alternates 1 and 2
 
-The Alternates 1 and Alternates 2 textboxes are stylistic variations of the Key Takeaways textbox. However, these components are custom-created and not part of the default Malala theme—unlike the Key Takeaways textbox.
+The Alternates 1 and Alternates 2 textboxes are stylistic variations of the Key Takeaways textbox. However, these components are custom-created and not part of the default Malala theme.
 
 ![alternates 1 textbox](/look-and-feel-guide/alternates-1.png)
 
@@ -535,9 +506,30 @@ These textboxes are used in the [Exercises](#exercises) and [Examples](#examples
 
 ![textbox with border left](/look-and-feel-guide/textbox-borderleft-1.png)
 
+```
+.textbox.textbox--border-left {
+  border-radius: 0.5rem;
+  border-left-width: 8px;
+  border-color: #004c97;
+  background-color: #fff;
+}
+```
+
 ![textbox with border left second option](/look-and-feel-guide/textbox-borderleft-2.png)
 
+```
+.textbox.textbox--border-left.second-option {
+  border-color: #f79750;
+}
+```
+
 ![textbox with border left third option](/look-and-feel-guide/textbox-borderleft-3.png)
+
+```
+.textbox.textbox--border-left.third-option {
+  border-color: #e81d2e;
+}
+```
 
 ### Table
 
@@ -559,12 +551,23 @@ The Table component is styled to create a bordered and horizontally centered tab
 }
 ```
 
-**\*Note:** The Malala theme in Pressbooks provides several built-in CSS classes that influence table appearance by default:
+**\*Note:** The **Malala Theme** in Pressbooks provides several built-in CSS classes that influence the table appearance by default:
 
-- `table.grid`: Adds a black border around all table cells, using `border: 1px solid` and `border-color: black`.
-- `table.aligncenter`: Centers the table horizontally within the page, using `margin-left: auto` and `margin-right: auto`.
+- `table.grid`: Adds a black border around all table cells.
+  ```
+  table.grid {
+    border: 1px solid; border-color: black;
+  }
+  ```
+- `table.aligncenter`: Centers the table horizontally within the page.
+  ```
+  table.aligncenter {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  ```
 - For more information on how spacing and structural alignment are handled, please refer to the [Layout & Spacing](#layout--spacing) section
-- Please use these default CSS classes when creating a table, using `<table class=grid aligncenter">`
+- Please use these default CSS classes when creating a table, using `<table class="grid aligncenter">`
 
 ### Image and Caption
 
@@ -657,43 +660,106 @@ To maintain consistency and quality in visual elements across Pressbooks project
 2. Go to [Canva](https://www.canva.com/) and log in using the Centennial College OER Lab account:
    - Email: OERLab@centennialcollege.ca
    - Password: OerLab@Centennial2021!
+     ![canva login button](/look-and-feel-guide/canva-login-1.png)
+     ![canva login with OERLab email account](/look-and-feel-guide/canva-login-2.png)
+     ![canva login with OERLab email password](/look-and-feel-guide/canva-login-3.png)
 3. Click “Create a design” and choose "Custom Size" and enter 700 x 500 px (recommended size)
+   ![canva create design](/look-and-feel-guide/canva-create-1.png)
+   ![canva create custom size](/look-and-feel-guide/canva-create-2.png)
 4. Click on the “Uploads” tab and upload your previously downloaded image
+   ![canva upload the image](/look-and-feel-guide/canva-create-3.png)
 5. Adjust, crop, and edit as needed to fit your design goals
 6. Click the “Share” button, then choose “Download”
+   ![canva download the image](/look-and-feel-guide/canva-create-4.png)
 7. Navigate to the page in your Pressbooks project where you want to insert the image
 8. Click where you’d like to place the image and choose “Add Media”
+   ![canva add image to the Pressbooks](/look-and-feel-guide/canva-insert-1.png)
 9. Go to “Upload Files”, click “Select Files”, and upload your image
+   ![canva upload image to the media library](/look-and-feel-guide/canva-insert-2.png)
 10. Once uploaded, click “Insert” at the bottom-right of the screen
+    ![canva insert image](/look-and-feel-guide/canva-insert-3.png)
 
 ### Diagram Creation in GeoGebra
 
 1. Visit [GeoGebra](https://www.geogebra.org/) and click "Start Calculator"
+   ![geogebra click start calculator](/look-and-feel-guide/geogebra-start.png)
 2. Setting up the workspace
    - Go to setting -> Basic -> Set the x-axis and y-axis ratio to 1:1
+     ![geogebra setting x-axis and y-axis ratio to 1:1](/look-and-feel-guide/geogebra-setting-1.png)
    - Go to setting -> xAxis setting -> Set the distance to 1
+     ![geogebra setting x-axis distance to 1](/look-and-feel-guide/geogebra-setting-2.png)
    - Go to setting -> yAxis setting -> Set the distance to 1
+     ![geogebra setting y-axis distance to 1](/look-and-feel-guide/geogebra-setting-3.png)
 3. Select "Tools" tab on the left side
 4. Select "Vector" tool under "Lines" to draw primary vector
+   ![geogebra draw vector lines](/look-and-feel-guide/geogebra-vector.png)
 5. Select "Circular Sector" tool under "Circles" to draw an angle
+   ![geogebra draw angle](/look-and-feel-guide/geogebra-circular.png)
 6. Select "Segment" under "Lines" to draw a reference line
-7. Select "Text" under "Media" to insert labels. For vector labels, use LaTeX syntax for an overhead arrow (`\overrightarrow{A} for vector A`)
-   - Replace A with your vector's label
+   ![geogebra draw segment lines](/look-and-feel-guide/geogebra-segment.png)
+7. Select "Text" under "Media" to insert labels. For vector labels, use LaTeX syntax for an overhead arrow (`\overrightarrow{A} for vector A`). Replace A with your vector's label
+   ![geogebra insert text label](/look-and-feel-guide/geogebra-text.png)
 8. Select the line and set the "Line Thickness" to 8
+   ![geogebra set the line thickness to 8](/look-and-feel-guide/geogebra-line-thickness.png)
 9. For angles and its labels and lines, set the color to gray. The theta symbol (θ) should be black and bold
+   ![geogebra set the angle to gray and its label color to black bold](/look-and-feel-guide/geogebra-angle-color.png)
 10. Set the reference line color to red and make it dotted line by selecting the line, and choose "Line Style" to dotted line
+    ![geogebra set the reference line color to red and dotted line](/look-and-feel-guide/geogebra-dotted-line.png)
 11. Set the position vectors color to blue
+    ![geogebra set the vector line color to blue](/look-and-feel-guide/geogebra-vector-color.png)
 12. To hide auto-generated labels (like A, B, C, D), click the label and unselect "Show Object"
+    ![geogebra hide labels](/look-and-feel-guide/geogebra-hide-label.png)
 13. Use Serif font for non-LaTeX texts and set text size to medium, and make it bold
 14. Export and cropping
     - Click "Hamburger" menu at the top left side.
     - Click "Export Image" and click "Download" button
+      ![geogebra click export image button](/look-and-feel-guide/geogebra-export-1.png)
+      ![geogebra click download image button](/look-and-feel-guide/geogebra-export-2.png)
     - After download the image, open the image and crop the image to one small square away from the last element for a clean and consistent layout
 
 ## How to Use Look and Feel Guide and Pressbooks Project Template
 
-blah blah
+This **Blog Post**, along with the accompanying **Pressbooks Template**, serves as both a visual reference and a styling resource for creating consistent, accessible, and professional-quality content.
 
-## Next Steps (Getting Started with Pressbooks)
+Together, they provide everything you need to build with confidence:
 
-blah blah
+- Use this **Blog Post** to understand the design principles and access the necessary CSS code
+- Use the **Pressbooks Template** to copy styles and components directly into your own project
+
+**\*Note:** Please do not clone the **Pressbooks Template** directly. Cloning can cause issues like the copyright statement that cannot be easily changed later.
+
+\*A link to the **Pressbooks Template**: [Pressbooks Template](https://ecampusontario.pressbooks.pub/pressbookstemplate/)
+
+### Steps to apply custom CSS styles in Pressbooks Template
+
+1. Create a new Pressbooks project
+2. Open the **Pressbooks Template** by using the above link
+3. Copy the custom CSS from the **Pressbooks Template**
+   - Navigate to the Custom CSS section within the **Pressbooks Template** dashboard (`Apperance` -> `Custom Styles`)
+   - Select and copy all the custom CSS styles within the **Your Web Styles** area
+4. Paste it into new Pressbook project
+   - In your new Pressbooks project dashboard, go to the `Apperance` -> `Custom Styles`
+   - Paste the copied CSS styles into the **Your Web Styles** area
+   - Click **"Save** button
+     ![apply custom CSS in the Pressbooks Template and Save it](/look-and-feel-guide/apply-custom-css.png)
+5. Always remember to check actual page to confirm whether the custom CSS styles have been applied correctly.
+
+### Import the Pressbooks Template to a new Pressbooks project
+
+You can selectively import specific chapters or pages from the **Pressbooks Template**.
+
+1. Open your new Pressbooks project dashboard
+2. Click "Import" tab on the left side
+3. Select "Web page or Pressbooks webbook (.html or URL)
+4. Select "Import from URL"
+5. Enter Source URL of the **Pressbooks Template**
+6. Click "Begin Import" button
+   ![import pressbook template](/look-and-feel-guide/import-template.png)
+
+**\*Note:** This method is not recommended and it is optional. Primary method for styling is copy and paste the custom CSS styles in the **Pressbooks Template**.
+
+## Next Steps
+
+Once you’ve created your Pressbooks project, applied the necessary custom CSS styles from the **Pressbooks Template**, and familiarized yourself with the overall look and feel of each styled component, you’re ready to start building content.
+
+Head over to [Getting Started with Pressbooks: A Guide for Student Developers](/blog/pressbooks-getting-started-student) to begin writing and learn about technical settings (plugin configurations, organize book structure, add users, etc) in your Pressbooks project.
