@@ -12,7 +12,7 @@ export const labMembers: LabMember[] = [
   {
     name: 'Gichul Jaun',
     role: 'Student Developer',
-    bio: 'An experienced web developer who is a goal-driven team player who thrives on collaboration, problem-solving, and tackling challenges.',
+    bio: 'Gichul ia an experienced web developer and goal-driven team player who thrives on collaboration, problem-solving, and tackling complex challenges.',
     program: 'Software Engineering Technology - AI',
     website: 'https://gichul-j.com/',
     image: '/team/gichuljaun.jpg',
@@ -32,22 +32,22 @@ export const labMembers: LabMember[] = [
   {
     name: 'Naomi Lopez Mendoza',
     role: 'Student Developer',
-    bio: 'Game Programming',
+    bio: 'Naomi is a currently completing her studies in Game Programming to improve the user experience and accessibility of interactive open educational resources.',
     program: 'Game Programming',
     image: '/team/naomi.jpg',
     website: 'https://naomilopez19.wixsite.com/naomisportfolio',
     linkedIn: 'https://www.linkedin.com/in/nmendo16/',
     github: 'https://github.com/nmendo16',
   },
-]
+];
 
 export type LabMember = {
-  name: string
-  bio: string
-  program: string
-  role: string
-  image: string
-  website?: string
-  linkedIn?: string
-  github?: string
-}
+  name: string;
+  bio: string;
+  program: string;
+  role: string;
+  image: string;
+  website?: string;
+  linkedIn?: string;
+  github?: string;
+};
