@@ -204,3 +204,8 @@ code[data-theme*=' '] span {
 code[data-language='plaintext'] {
   color: rgb(39 39 42 / var(--tw-text-opacity, 1)) /* #27272a */;
 }
+
+.gear-sim {
+  /* change height for mobile only*/
+  @apply h-[360px] md:h-[650px];
+}
