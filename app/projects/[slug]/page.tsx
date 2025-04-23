@@ -50,7 +50,7 @@ export default async function ProjectPage(props: PageProps) {
       >
         <ArrowLeftIcon className="w-4 h-4 mr-1.5" /> Back to projects
       </Link>
-      <div className="flex flex-col gap-3 pb-7 w-full mb-2">
+      <div className="flex flex-col gap-3 w-full mb-2">
         <p className="text-muted-foreground text-sm">{formatDate(res.frontmatter.date)}</p>
         <h1 className="sm:text-4xl text-3xl font-extrabold">{res.frontmatter.title}</h1>
         {/* <div className="mt-6 flex flex-col gap-3">
