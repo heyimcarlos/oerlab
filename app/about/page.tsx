@@ -107,6 +107,7 @@ export default function AboutPage() {
             </CardContent>
           </Card>
         </div>
+        <div id="mission" />
       </section>
 
       {/* Our Mission Section */}
@@ -161,6 +162,7 @@ export default function AboutPage() {
             </CardContent>
           </Card>
         </div>
+        <div id="team" />
       </section>
 
       <section className="mb-16">
@@ -217,6 +219,7 @@ export default function AboutPage() {
             </Card>
           ))}
         </div>
+        <div id="contact" />
       </section>
 
       <section>
