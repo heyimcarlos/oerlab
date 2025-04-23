@@ -14,14 +14,14 @@ body {
 #unity-container.unity-mobile {
   position: fixed;
   width: 100%;
-  height: 100%;
+  height: 50%;
 }
 #unity-canvas {
   background: #231f20;
 }
 .unity-mobile #unity-canvas {
   width: 100%;
-  height: 100%;
+  height: 50%;
 }
 #unity-loading-bar {
   position: absolute;
@@ -50,6 +50,7 @@ body {
 }
 #unity-footer {
   position: relative;
+  padding-inline: 5px;
 }
 .unity-mobile #unity-footer {
   display: none;
