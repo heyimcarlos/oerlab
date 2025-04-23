@@ -1,6 +1,3 @@
-html {
-  background-color: transparent;
-}
 body {
   padding: 0;
   margin: 0;
@@ -12,6 +9,7 @@ body {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  height: 100%;
 }
 #unity-container.unity-mobile {
   position: fixed;
