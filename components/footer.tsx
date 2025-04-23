@@ -6,7 +6,7 @@ import { Icons } from './icons'
 export function Footer() {
   return (
     <footer className="border-t w-full p-5">
-      <div className="container flex items-center flex-col-reverse md:flex-row sm:justify-between justify-center  gap-4 h-full text-muted-foreground text-sm flex-wrap sm:py-0 py-3 max-sm:px-4">
+      <div className="container flex items-center flex-col-reverse md:flex-row sm:justify-between justify-center sm:gap-2 gap-4 h-full text-muted-foreground text-sm flex-wrap sm:py-0 py-3 max-sm:px-4">
         {/* <Image src="/logo.png" alt={'logo'} width={300} height={300} quality={90} className="object-cover h-24 w-24" /> */}
         <div className="flex gap-3 max-w-96 flex-col">
           <p className="">
@@ -27,7 +27,7 @@ export function Footer() {
             <Icons.sa className="h-8 w-8" />
           </div>
         </div>
-        <div className="gap-4 flex md:grid md:grid-cols-2">
+        <div className="gap-2 md:gap-4 flex flex-wrap md:grid md:grid-cols-2">
           <FooterButtons />
         </div>
       </div>
