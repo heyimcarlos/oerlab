@@ -207,5 +207,5 @@ code[data-language='plaintext'] {
 
 .gear-sim {
   /* change height for mobile only*/
-  @apply h-[360px] md:h-[650px];
+  @apply h-[300px] md:h-[650px];
 }
